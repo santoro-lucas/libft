@@ -40,8 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 			s2++;
 		}
 	}
-	s2 = s2 - ft_strlen(
-	return (s2);
+	s2 = s2 - ft_strlen(s2);
 }
 
 #include <stdio.h>
