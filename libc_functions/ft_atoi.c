@@ -3,15 +3,25 @@ int	ft_isdigit(int c);
 int	ft_atoi(const char *nptr)
 {
 	int	i;
+	int sign;
 
 	i = 0;
-	while (*nptr != '\0')
+	sign = 1;
+	if (*nptr == '-')
+	{
+		sign = -1;
+		nptr++;
+	}
+	else if (*nptr == '+')
+		nptr++;
+	while (ft_isdigit(*nptr))
 	{
 		i = i * 10;
 		i = i + (*nptr - 48);
 		nptr++;
 	}
-	return (i);
+	return(i);
+
 }
 
 #include <stdio.h>
