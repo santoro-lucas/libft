@@ -1,4 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/11 21:23:46 by lusantor          #+#    #+#             */
+/*   Updated: 2022/05/11 21:23:46 by lusantor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_isdigit(int c);
+
+int	ft_countspace(const char *str)
+{
+	int i;
+
+	i = 0;
+	while (*str++ == ' ')
+		i++;
+	return (i);
+}
 
 int	ft_atoi(const char *nptr)
 {
@@ -7,8 +29,7 @@ int	ft_atoi(const char *nptr)
 
 	i = 0;
 	sign = 1;
-	while (*nptr == ' ')
-		nptr++;
+	nptr = nptr + ft_countspace(nptr);
 	if (*nptr == '-')
 	{
 		sign = -1;
@@ -24,13 +45,4 @@ int	ft_atoi(const char *nptr)
 	}
 	i = i * sign;
 	return(i);
-}
-
-#include <stdio.h>
-#include <stdlib.h>
-int	main(void)
-{
-	printf("ft_atoi: %d\n", ft_atoi("   -2147483648"));
-	printf("og_atoi: %d\n", atoi("   -2147483648"));
-	return (0);
 }
