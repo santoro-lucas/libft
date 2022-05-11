@@ -12,14 +12,11 @@
 
 int	ft_isdigit(int c);
 
-int	ft_countspace(const char *str)
+char	*ignorespaces(const char *str)
 {
-	int i;
-
-	i = 0;
-	while (*str++ == ' ')
-		i++;
-	return (i);
+	while (*str == ' ')
+		str++;
+	return (str);
 }
 
 int	ft_atoi(const char *nptr)
@@ -29,7 +26,7 @@ int	ft_atoi(const char *nptr)
 
 	i = 0;
 	sign = 1;
-	nptr = nptr + ft_countspace(nptr);
+	nptr = ignorespaces(nptr);
 	if (*nptr == '-')
 	{
 		sign = -1;
