@@ -7,6 +7,8 @@ int	ft_atoi(const char *nptr)
 
 	i = 0;
 	sign = 1;
+	while (*nptr == ' ')
+		nptr++;
 	if (*nptr == '-')
 	{
 		sign = -1;
@@ -20,8 +22,8 @@ int	ft_atoi(const char *nptr)
 		i = i + (*nptr - 48);
 		nptr++;
 	}
+	i = i * sign;
 	return(i);
-
 }
 
 #include <stdio.h>
