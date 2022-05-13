@@ -6,40 +6,40 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 21:23:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/05/11 21:23:46 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/05/12 22:15:12 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c);
 
-char	*ignorespaces(const char *str)
-{
-	while (*str == ' ')
-		str++;
-	return (str);
-}
-
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int sign;
+	int	num;
+	char sign;
 
-	i = 0;
+	num = 0;
 	sign = 1;
-	nptr = ignorespaces(nptr);
-	if (*nptr == '-')
+	while (*nptr == ' ')
+		nptr++;		
+	if (*nptr == '-' || *nptr == '+')
 	{
-		sign = -1;
+		if(*nptr == '-')
+			sign = -1;
 		nptr++;
 	}
-	else if (*nptr == '+')
-		nptr++;
 	while (ft_isdigit(*nptr))
 	{
-		i = i * 10;
-		i = i + (*nptr - 48);
+		num *= 10;
+		num += (*nptr - '0');
 		nptr++;
 	}
-	i = i * sign;
-	return(i);
+	num = num * sign;
+	return(num);
+}
+
+#include <stdio.h>
+int	main(void)
+{
+	printf("%i\n", ft_atoi("-987987"));
+	return (0);
 }
