@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 21:23:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/05/12 22:15:12 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/05/16 22:29:06 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,4 @@ int	ft_atoi(const char *nptr)
 	}
 	num = num * sign;
 	return(num);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	printf("%i\n", ft_atoi("-987987"));
-	return (0);
 }
