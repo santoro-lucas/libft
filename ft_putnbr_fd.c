@@ -6,18 +6,19 @@ void	putdigit(int d, int fd)
 	write(fd, &d, 1);
 }
 
+// Still needs to manage int min = -2147483648
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
 	{
-		write(1, "-", 1);
+		write(1, "-", fd);
 		n = n * -1;
 	}
 	if (n / 10 < 1)
 		putdigit(n % 10, fd);
 	else
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
 }
