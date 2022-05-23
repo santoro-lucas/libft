@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Virtua Environment inside gitpod
+venv
+venv/*
+
+Makefile
