@@ -51,8 +51,10 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Virtua Environment inside gitpod
+# Virtual Environment inside gitpod
 venv
 venv/*
 
-Makefile
+#VScode files
+.vscode
+.vscode/*
