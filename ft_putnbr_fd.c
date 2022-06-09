@@ -1,6 +1,18 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/09 17:36:09 by lusantor          #+#    #+#             */
+/*   Updated: 2022/06/09 17:36:24 by lusantor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	putdigit(int d, int fd)
+#include "libft.h"
+
+static void	putdigit(int d, int fd)
 {
 	d = '0' + d;
 	write(fd, &d, 1);

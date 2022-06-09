@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *str) // Type should be size_t
+#include "libft.h"
+
+size_t ft_strlen(const char *str) 
 {
 	int len;
 	

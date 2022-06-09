@@ -1,9 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/09 17:39:02 by lusantor          #+#    #+#             */
+/*   Updated: 2022/06/09 17:43:04 by lusantor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-// Links ft_strlen
-int	ft_strlen(const char *str);
+#include "libft.h"
 
 // Checks whether c is present in *set
 static int ft_isinset(char c, const char *set)
@@ -18,7 +25,10 @@ static int ft_isinset(char c, const char *set)
 	return (0);
 }
 
-// Ignoresj
+// Ignores characters in set, 
+// measures the remainder with strlen
+// then comes backwards counting characters in set
+// finally copies
 char *ft_strtrim(const char *s1, const char *set)
 {
 	char	*s2;
@@ -40,13 +50,3 @@ char *ft_strtrim(const char *s1, const char *set)
 	s2[pos] = '\0';
 	return (s2);
 }
-
-// Tests created functions and compares them with some of the originals
-// int main(void)
-// {
-// 	char *string = "---------------+-+-+-+-+-+-+-+-+-+----W + o + r + d-----+++----";
-
-// 	printf("%s\n", string);
-// 	printf("%s\n", ft_strtrim(string, "+- "));
-// 	return (0);
-// }

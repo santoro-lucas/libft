@@ -6,11 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 21:23:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/05/16 22:29:54 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/09 17:32:16 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c);
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

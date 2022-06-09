@@ -6,13 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:57:06 by lusantor          #+#    #+#             */
-/*   Updated: 2022/05/23 22:48:47 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/09 17:37:10 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(char *str);
+#include "libft.h"
 
 char	*ft_strdup(char *s)
 {

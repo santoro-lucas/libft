@@ -6,13 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 23:36:23 by lusantor          #+#    #+#             */
-/*   Updated: 2022/05/26 23:36:24 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/09 17:37:44 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int ft_strlen(const char *str);
+#include "libft.h"
 
 void	copy_each(char const **origin, char **dest)
 {
@@ -36,11 +34,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*str = '\0';
 	str = str - size;
 	return (str);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	printf("%s\n", ft_strjoin("This is one string-", "-and this is another."));
-	return (0);
 }
