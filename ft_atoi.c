@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 21:23:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/09 17:32:16 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/09 22:16:29 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	num;
-	char sign;
+	int		num;
+	char	sign;
 
 	num = 0;
 	sign = 1;
