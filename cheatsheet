@@ -7,11 +7,11 @@ so i can remember them
 
 This file will probably be rendered useless by Makefile very soon
 
-# Compiles all object files into libft.a
-ar rcs libf.a main.c ft_*.o
-
 # Compiles all .c files into .o files
 cc -Wall -Wextra -Werror -c ft_*.c
+
+# Adds all object files into libft.a
+ar rcs libf.a main.c ft_*.o
 
 Compiles any main.c present with libft.a, runs and removes the .out
 cc -Wall -Wextra -Werror main.c libft.a && ./a.out && rm a.out
