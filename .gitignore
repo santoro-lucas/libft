@@ -57,4 +57,5 @@ venv/*
 
 #VScode files
 .vscode
-.vscode/*main.c
+.vscode/*
+main.c
