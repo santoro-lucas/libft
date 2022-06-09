@@ -58,4 +58,8 @@ venv/*
 #VScode files
 .vscode
 .vscode/*
+
+# Test and other object files
 main.c
+*.o
+
