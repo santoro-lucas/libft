@@ -63,3 +63,4 @@ venv/*
 main.c
 *.o
 
+*.swp
