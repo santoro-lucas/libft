@@ -50,3 +50,4 @@ char *ft_strtrim(const char *s1, const char *set)
 	s2[pos] = '\0';
 	return (s2);
 }
+

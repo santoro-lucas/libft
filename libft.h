@@ -45,7 +45,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 // ft_strncmp
 // ft_strnstr
 // ft_strrchr
-// ft_strtrim
+char *ft_strtrim(const char *s1, const  char *set);
 // ft_substr
 int	ft_tolower(int c);
 int	ft_toupper(int c);
