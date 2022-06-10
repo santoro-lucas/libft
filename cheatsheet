@@ -1,5 +1,4 @@
 Personal Cheatsheet
-===================
 
 Since gitpod doesnt seem to keep the aliases i create,
 this file will contain commonly used commands
@@ -10,8 +9,12 @@ This file will probably be rendered useless by Makefile very soon
 # Compiles all .c files into .o files
 cc -Wall -Wextra -Werror -c ft_*.c
 
+# Compile with -W flags
+alias comp="cc -Wall -Werror -Wextra"
+
 # Adds all object files into libft.a
 ar rcs libft.a main.c ft_*.o
 
 Compiles any main.c present with libft.a, runs and removes the .out
-cc -Wall -Wextra -Werror main.c libft.a && ./a.out && rm a.out
+alias run="cc -Wall -Wextra -Werror main.c libft.a && ./a.out && rm a.out"
+
