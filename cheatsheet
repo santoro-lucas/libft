@@ -9,12 +9,14 @@ This file will probably be rendered useless by Makefile very soon
 # Compiles all .c files into .o files
 cc -Wall -Wextra -Werror -c ft_*.c
 
-# Compile with -W flags
+# Comp | Compile with -W flags
 alias comp="cc -Wall -Werror -Wextra"
 
-# Adds all object files into libft.a
-ar rcs libft.a main.c ft_*.o
+# Upgrade | Adds all object files into libft.a
+alias upgrade="ar rcs libft.a ft_*.o"
 
-Compiles any main.c present with libft.a, runs and removes the .out
+# Run | Compiles any main.c present with libft.a, runs and removes the .out
 alias run="cc -Wall -Wextra -Werror main.c libft.a && ./a.out && rm a.out"
 
+# Compg | Compiles for debugging with all flags
+alias compg="cc -Wall -Werror -Wextra -g"
