@@ -1,13 +1,14 @@
 # Personal Cheatsheet
 
 # This is a custom aliases list
-#This file will probably be rendered useless by Makefile very soon
-
-# Compc | Compile functions into object files with all required flags
+# To use it, run the command below
+# source /workspace/libft/cheatsheet
+# 
+# Comp | Compile functions into object files with all required flags
 alias comp="cc -Wall -Werror -Wextra -c"
 
-# Compg | Compiles for debugging with all flags
-alias compg="cc -Wall -Werror -Wextra -g"
+# Debug | Compiles for debugging with all flags
+alias debug="cc -Wall -Werror -Wextra -g"
 
 # Run | Compiles any main.c present with libft.a, runs and removes the .out
 alias run="cc -Wall -Wextra -Werror main.c libft.a && ./a.out && rm a.out"
