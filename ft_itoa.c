@@ -6,13 +6,18 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:59:11 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/09 16:59:12 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/11 00:14:59 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
 #include <unistd.h>
+
+// Atençao: o estado atual dessa função é meramente uma cópia do algoritmo
+// originalmente usado para a ft_putnbr da piscina
+// como inspiração para o desenvolvimento dela
+// Nem o protótipo e nem a função estão de acordo com o solicitado. 
+// Corrigir isso assim que for trabalhar na função
 
 int	count_chars(int n)
 {

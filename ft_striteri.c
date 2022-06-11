@@ -6,10 +6,13 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:37:17 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/09 17:37:21 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/10 23:11:25 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	
+}

@@ -1,22 +1,16 @@
-Personal Cheatsheet
+# Personal Cheatsheet
 
-Since gitpod doesnt seem to keep the aliases i create,
-this file will contain commonly used commands
-so i can remember them
+# This is a custom aliases list
+#This file will probably be rendered useless by Makefile very soon
 
-This file will probably be rendered useless by Makefile very soon
+# Compc | Compile functions into object files with all required flags
+alias comp="cc -Wall -Werror -Wextra -c"
 
-# Compiles all .c files into .o files
-cc -Wall -Wextra -Werror -c ft_*.c
-
-# Comp | Compile with -W flags
-alias comp="cc -Wall -Werror -Wextra"
-
-# Upgrade | Adds all object files into libft.a
-alias upgrade="ar rcs libft.a ft_*.o"
+# Compg | Compiles for debugging with all flags
+alias compg="cc -Wall -Werror -Wextra -g"
 
 # Run | Compiles any main.c present with libft.a, runs and removes the .out
 alias run="cc -Wall -Wextra -Werror main.c libft.a && ./a.out && rm a.out"
 
-# Compg | Compiles for debugging with all flags
-alias compg="cc -Wall -Werror -Wextra -g"
+# Uplib| Adds all object files into libft.a
+alias uplib="ar rcs libft.a ft_*.o && rm ft_*.o"

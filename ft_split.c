@@ -6,10 +6,13 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:36:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/09 17:36:51 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/10 23:08:45 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char	**ft_split(char const *s, char c)
+{
+	
+}

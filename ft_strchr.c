@@ -6,7 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:36:55 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/09 17:36:57 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/11 00:00:08 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*strchr(const char *s, int c)
+{
+	
+}

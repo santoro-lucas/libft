@@ -6,7 +6,13 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:44:08 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/09 17:44:09 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/11 00:01:37 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	
+}

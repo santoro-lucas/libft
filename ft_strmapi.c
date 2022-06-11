@@ -6,8 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:38:18 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/09 17:38:30 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/11 00:06:27 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	
+}
