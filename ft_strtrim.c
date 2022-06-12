@@ -13,12 +13,12 @@
 #include "libft.h"
 
 // Checks whether c is present in *set
-static int ft_isinset(char c, const char *set)
+static int	ft_isinset(char c, const char *set)
 {
-	while(*set != '\0')
+	while (*set != '\0')
 	{
 		if (c == *set)
-			return  (1);
+			return (1);
 		else
 			set++;
 	}
@@ -29,7 +29,7 @@ static int ft_isinset(char c, const char *set)
 // measures the remainder with strlen
 // then comes backwards counting characters in set
 // finally copies
-char *ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*s2;
 	int		end;
@@ -50,4 +50,3 @@ char *ft_strtrim(const char *s1, const char *set)
 	s2[pos] = '\0';
 	return (s2);
 }
-

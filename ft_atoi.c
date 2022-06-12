@@ -14,16 +14,16 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	num;
+	int		num;
 	char	sign;
 
 	num = 0;
 	sign = 1;
 	while (*nptr == ' ')
-		nptr++;		
+		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{
-		if(*nptr == '-')
+		if (*nptr == '-')
 			sign = -1;
 		nptr++;
 	}
@@ -34,5 +34,5 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	num = num * sign;
-	return(num);
+	return (num);
 }
