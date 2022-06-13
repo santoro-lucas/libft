@@ -60,5 +60,5 @@ venv/*
 
 # Test and other object files
 *.o
-
+*.a
 *.swp
