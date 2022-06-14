@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:30:39 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/10 22:01:45 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/14 00:39:51 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *str);
 void	ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-// ft_memmove
+void	*ft_memmove(void *dest, const void *src, size_t n);
 // ft_strlcat
 // ft_strlcpy
 int	ft_tolower(int c);
