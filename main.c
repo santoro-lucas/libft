@@ -1,10 +1,5 @@
 #include "libft.h"
 
-static void	linebreak(void)
-{
-	ft_putchar_fd('\n', 1);
-}
-
 static void	underline(char *str)
 {
 	int len;
@@ -12,56 +7,55 @@ static void	underline(char *str)
 	len = ft_strlen(str);
 	while (len-- > 0)
 		ft_putchar_fd('=', 1);
-	linebreak();
 }
 
-static void	header(char *str)
+static void	wrapper(char *str)
 {
 	ft_putendl_fd(str, 1);
 	underline(str);
-	linebreak();
+	ft_putchar_fd('\n', 1);
 }
 
 int	main(void)
 {
-	// char string[8] = {'p', 'a', 'l', 'a', 'v', 'r', 'a', '\0'};
+	wrapper("Testing isalpha");
+		ft_putnbr_fd(ft_isalpha('a'), 1);
+		ft_putchar_fd('\n', 1);
+	wrapper("Testing isdigit");
+	wrapper("Testing isalnum");
+	wrapper("Testing isascii");
+	wrapper("Testing isprint");
+	wrapper("Testing strlen");
+	wrapper("Testing memset");
+	wrapper("Testing bzero");
+	wrapper("Testing memcpy");
+	// wrapper("Testing memmove");
+	// wrapper("Testing strlcpy");
+	// wrapper("Testing strlcat");
+	wrapper("Testing toupper");
+	wrapper("Testing tolower");
+	// wrapper("Testing strchr");
+	// wrapper("Testing strrchr");
+	// wrapper("Testing strncmp");
+	// wrapper("Testing memchr");
+	// wrapper("Testing memcmp");
+	// wrapper("Testing strnstr");
+	// wrapper("Testing atoi");
 
-	header("Testing isalpha");
-	header("Testing isdigit");
-	header("Testing isalnum");
-	header("Testing isascii");
-	header("Testing isprint");
-	header("Testing strlen");
-	header("Testing memset");
-	header("Testing bzero");
-	header("Testing memcpy");
-	// header("Testing memmove");
-	// header("Testing strlcpy");
-	// header("Testing strlcat");
-	header("Testing toupper");
-	header("Testing tolower");
-	// header("Testing strchr");
-	// header("Testing strrchr");
-	// header("Testing strncmp");
-	// header("Testing memchr");
-	// header("Testing memcmp");
-	// header("Testing strnstr");
-	// header("Testing atoi");
+	// wrapper("Testing calloc");
+	wrapper("Testing strdup");
 
-	// header("Testing calloc");
-	header("Testing strdup");
-
-	header("Testing substr");
-	header("Testing strjoin");
-	header("Testing strtrim");
-	header("Testing split");
-	header("Testing strmapi");
-	header("Testing itoa");
-	header("Testing striteri");
-	header("Testing putchar_fd");
-	header("Testing putstr_fd");
-	header("Testing putendl_fd");
-	header("Testing putnbr_fd");
+	wrapper("Testing substr");
+	wrapper("Testing strjoin");
+	wrapper("Testing strtrim");
+	wrapper("Testing split");
+	wrapper("Testing strmapi");
+	wrapper("Testing itoa");
+	wrapper("Testing striteri");
+	wrapper("Testing putchar_fd");
+	wrapper("Testing putstr_fd");
+	wrapper("Testing putendl_fd");
+	wrapper("Testing putnbr_fd");
 	return (0);
 }
 
