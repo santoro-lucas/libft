@@ -10,6 +10,9 @@ alias ll="ls -la"
 # Comp | Compile functions into object files with all required flags
 alias comp="cc -Wall -Werror -Wextra -c"
 
+# Testfunc |
+alias testfunc="cc -Wall -Wextra -Werror libft.a"
+
 # Debug | Compiles for debugging with all flags
 alias debug="cc -Wall -Werror -Wextra -g"
 
@@ -17,4 +20,4 @@ alias debug="cc -Wall -Werror -Wextra -g"
 alias run="cc -Wall -Wextra -Werror main.c libft.a && ./a.out && rm a.out"
 
 # Upgrade| Adds all object files into libft.a
-alias upgrade="cc -Wall -Wextra -Werror -c ft_*.c && ar rcs libft.a ft_*.o && rm ft_*.o"
+alias upgrade="ar rcs libft.a ft_*.o && rm ft_*.o"
