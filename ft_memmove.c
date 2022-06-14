@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 23:17:10 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/14 19:40:16 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/14 20:11:39 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		rv_memcpy(dest, src, n);
 	else
 		ft_memcpy(dest, src, n);	
-	dest -= n;
 	return (dest);
 }

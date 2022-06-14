@@ -1,9 +1,9 @@
 # Personal Cheatsheet
 
 # This is a custom aliases list
-# To use it, run the command below
+# To use it, run the following command:
 # source /workspace/libft/cheatsheet
- 
+
 # LL | list all with details
 alias ll="ls -la"
 
