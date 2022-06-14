@@ -33,11 +33,11 @@ memcpy:
 memmove:
 	cc -Wall -Wextra -Werror -c ft_memmove.c
 
-strlcat:
-	cc -Wall -Wextra -Werror -c ft_strlcat.c
-
 strlcpy:
 	cc -Wall -Wextra -Werror -c ft_strlcpy.c
+
+strlcat:
+	cc -Wall -Wextra -Werror -c ft_strlcat.c
 
 tolower:
 	cc -Wall -Wextra -Werror -c ft_tolower.c

@@ -8,10 +8,10 @@
 alias ll="ls -la"
 
 # Comp | Compile functions into object files with all required flags
-alias comp="cc -Wall -Werror -Wextra -c"
+alias comp="cc -Wall -Werror -Wextra -c -g"
 
-# Testar
-alias testar="cc -Wall -Wextra -Werror *.c libft.a"
+# Testar | Usar na pasta desk quando estiver com uma main interna
+alias testar="cc -Wall -Wextra -Werror ft_*.c libft.a && ./a.out && rm a.out"
 
 # Debug | Compiles for debugging with all flags
 alias debug="cc -Wall -Werror -Wextra -g"
