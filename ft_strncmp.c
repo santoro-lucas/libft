@@ -6,11 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:38:34 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/11 00:00:34 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/14 23:04:19 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	
 }

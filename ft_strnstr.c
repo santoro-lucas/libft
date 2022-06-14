@@ -6,11 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:38:51 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/11 00:06:03 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/14 23:05:59 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strnstr(const char	*big, const char *little, size_t len)
+char	*ft_strnstr(const char	*big, const char *little, size_t len)
 {
 
 }

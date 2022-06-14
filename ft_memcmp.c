@@ -6,11 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 23:16:14 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/10 23:59:51 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/14 23:04:56 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 
 }

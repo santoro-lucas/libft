@@ -6,11 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 20:49:57 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/11 00:12:53 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/14 23:01:57 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	
 }

@@ -6,11 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:38:56 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/11 00:01:10 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/14 23:03:09 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	
 }

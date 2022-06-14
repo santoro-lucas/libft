@@ -6,11 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 23:13:39 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/10 23:59:43 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/14 23:05:23 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	
 }
