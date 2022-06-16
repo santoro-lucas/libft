@@ -7,6 +7,9 @@
 # LL | list all with details
 alias ll="ls -la"
 
+# Clean Ls
+alias cls="clear && ls"
+
 # Comp | Compile functions into object files with all required flags
 alias comp="cc -Wall -Werror -Wextra -c -g"
 

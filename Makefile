@@ -1,106 +1,19 @@
-all:
-	cc -Wall -Wextra -Werror main.c libft.a
-libft:
-	ar -rcs libft.a ft_*.o
+CC=cc
+CFLAGS=-Wall -Wextra -Werror
 
-isalpha:
-	cc -Wall -Wextra -Werror -c ft_isalpha.c
+SRCS =	isalpha isdigit isalnum isascii isprint strlen \
+		memset bzero memcpy memmove strlcpy strlcat \
+		toupper tolower strchr strrchr strncmp memchr \
+		memcmp strnstr atoi calloc strdup substr strjoin \
+		strtrim split itoa strmapi striteri putchar_fd \
+		putstr_fd putendl_fd putnbr_fd
 
-isdigit:
-	cc -Wall -Wextra -Werror -c ft_isdigit.c
+libft: libft.h
+	ar -rcs libft.a ft_*.o && rm *.o
 
-isalnum:
-	cc -Wall -Wextra -Werror -c ft_isprint.c
+clean:
+	rm ft_*.o
 
-isascii:
-	cc -Wall -Wextra -Werror -c ft_islinum.c
-
-isprint:
-	cc -Wall -Wextra -Werror -c ft_isprint.c
-
-strlen:
-	cc -Wall -Wextra -Werror -c ft_isstrlen.c
-
-memset:
-	cc -Wall -Wextra -Werror -c ft_ismemset.c
-
-bzero:
-	cc -Wall -Wextra -Werror -c ft_bzero.c
-
-memcpy:
-	cc -Wall -Wextra -Werror -c ft_memcpy.c
-
-memmove:
-	cc -Wall -Wextra -Werror -c ft_memmove.c
-
-strlcpy:
-	cc -Wall -Wextra -Werror -c ft_strlcpy.c
-
-strlcat:
-	cc -Wall -Wextra -Werror -c ft_strlcat.c
-
-tolower:
-	cc -Wall -Wextra -Werror -c ft_tolower.c
-
-toupper:
-	cc -Wall -Wextra -Werror -c ft_toupper.c
-
-strchr:
-	cc -Wall -Wextra -Werror -c ft_strchr.c
-
-strrchr:
-	cc -Wall -Wextra -Werror -c ft_strrchr.c
-
-strncmp:
-	cc -Wall -Wextra -Werror -c ft_strncmp.c
-
-memchr:
-	cc -Wall -Wextra -Werror -c ft_memchr.c
-
-memcmp:
-	cc -Wall -Wextra -Werror -c ft_memcmp.c
-
-strnstr:
-	cc -Wall -Wextra -Werror -c ft_strnstr.c
-
-atoi:
-	cc -Wall -Wextra -Werror -c ft_atoi.c
-
-calloc:
-	cc -Wall -Wextra -Werror -c ft_calloc.c
-
-strdup:
-	cc -Wall -Wextra -Werror -c ft_strdup.c
-
-substr:
-	cc -Wall -Wextra -Werror -c ft_substr.c
-
-strjoin:
-	cc -Wall -Wextra -Werror -c ft_strjoin.c
-
-strtrim:
-	cc -Wall -Wextra -Werror -c ft_strtrim.c
-
-split:
-	cc -Wall -Wextra -Werror -c ft_split.c
-
-strmapi:
-	cc -Wall -Wextra -Werror -c ft_strmapi.c
-
-itoa:
-	cc -Wall -Wextra -Werror -c ft_itoa.c
-
-striteri:
-	cc -Wall -Wextra -Werror -c ft_itoa.c
-
-putchar_fd:
-	cc -Wall -Wextra -Werror -c ft_putchar_fd.c
-
-putstr_fd:
-	cc -Wall -Wextra -Werror -c ft_putstr_fd.c
-
-putendl_fd:
-	cc -Wall -Wextra -Werror -c ft_putendl_fd.c
-
-putnbr_fd:
-	cc -Wall -Wextra -Werror -c ft_putnbr_fd.c
+$(SRCS):
+	$(CC) $(CFLAGS) -c ft_$@.c
+	ls ft_$@.o
