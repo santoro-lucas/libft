@@ -1,6 +1,6 @@
 #! /bin/bash
 
-source /workspace/libft/cheatsheet
+source cheatsheet
 sudo apt install valgrind
 ssh-keygen
 cat ~/.ssh/id_rsa.pub
