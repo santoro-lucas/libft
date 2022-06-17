@@ -1,19 +1,41 @@
-CC=cc
+NAME=libft.a
 CFLAGS=-Wall -Wextra -Werror
 
-SRCS =	isalpha isdigit isalnum isascii isprint strlen \
-		memset bzero memcpy memmove strlcpy strlcat \
-		toupper tolower strchr strrchr strncmp memchr \
-		memcmp strnstr atoi calloc strdup substr strjoin \
-		strtrim split itoa strmapi striteri putchar_fd \
-		putstr_fd putendl_fd putnbr_fd
+SRCS =	ft_isalpha.c \
+		ft_isdigit.c \
+	   	ft_isalnum.c \
+	   	ft_isascii.c \
+	   	ft_isprint.c \
+	   	ft_strlen.c \
+		ft_memset.c \
+	   	ft_bzero.c \
+	   	ft_memcpy.c \
+	   	ft_memmove.c \
+		ft_strlcpy.c \
+		ft_strlcat.c \
+		ft_toupper.c \
+	   	ft_tolower.c \
+	   	ft_atoi.c \
+	   	ft_strdup.c \
+	   	ft_strjoin.c \
+		ft_strtrim.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c
 
-libft: libft.h
-	ar -rcs libft.a ft_*.o && rm *.o
+OBJS = $(SRCS:.c=.o) 
+
+all: $(NAME) 
+
+$(NAME): libft.h $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
+	ar -rcs libft.a $(OBJS)
+
+re: fclean all
 
 clean:
-	rm ft_*.o
+	$(RM) $(OBJS)
 
-$(SRCS):
-	$(CC) $(CFLAGS) -c ft_$@.c
-	ls ft_$@.o
+fclean: clean
+	rm $(NAME)

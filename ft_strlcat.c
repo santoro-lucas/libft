@@ -10,7 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	
+	size_t counter;
+
+	if (size < ft_strlen(dest))
+		return (ft_strlen(src) + size);
+	counter = 0;
+	while (*dst != '\0')
+	{
+		dst++;
+		counter++;
+	}
+	while ((*src != '\0') && counter < (size - 1))
+	{
+		*dst++ = *src++;
+		counter++;
+	}	
+	*dst = '\0';
+	return (counter);
 }
