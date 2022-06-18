@@ -7,20 +7,14 @@
 # LL | list all with details
 alias ll="ls -la"
 
-# Clean Ls
+# Clean LS
 alias cls="clear && ls"
 
 # Comp | Compile functions into object files with all required flags
-alias comp="cc -Wall -Werror -Wextra -c -g"
-
-# Testar | Usar na pasta desk quando estiver com uma main interna
-alias testar="cc -Wall -Wextra -Werror ft_*.c libft.a && ./a.out && rm a.out"
+alias comp="cc -Wall -Werror -Wextra"
 
 # Debug | Compiles for debugging with all flags
 alias debug="cc -Wall -Werror -Wextra -g"
 
 # Run | Compiles any main.c present with libft.a, runs and removes the .out
 alias run="cc -Wall -Wextra -Werror main.c libft.a && ./a.out && rm a.out"
-
-# Upgrade| Adds all object files into libft.a
-alias upgrade="ar rcs libft.a ft_*.o && rm ft_*.o"
