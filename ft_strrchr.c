@@ -6,11 +6,22 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:38:56 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/14 23:03:09 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/18 03:29:38 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	
+	int len;
+
+	len = ft_strlen(s);
+	s += len;
+	while ((*s != (char) c) && (len-- > 0))
+		s--;
+	if (*s == (char) c)
+		return ((char *) s);
+	else
+		return (NULL);
 }
