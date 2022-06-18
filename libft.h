@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:30:39 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/18 03:14:29 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/18 04:02:05 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_toupper(int c);
 int	ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
-// int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
 // void	*ft_memchr(const void *s, int c, size_t n);
 // int	ft_memcmp(const void *s1, const void *s2, size_t n);
 // char	*ft_strnstr(const char	*big, const char *little, size_t len);
