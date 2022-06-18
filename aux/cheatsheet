@@ -17,4 +17,4 @@ alias comp="cc -Wall -Werror -Wextra"
 alias debug="cc -Wall -Werror -Wextra -g"
 
 # Run | Compiles any main.c present with libft.a, runs and removes the .out
-alias run="cc -Wall -Wextra -Werror main.c libft.a && ./a.out && rm a.out"
+alias run="make && make clean && cc -Wall -Wextra -Werror main.c libft.a && clear && ./a.out && rm a.out"

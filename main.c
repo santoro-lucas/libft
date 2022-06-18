@@ -1,20 +1,44 @@
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
-static void	underline(char *str)
+static void	underline(char *str, char underchar)
 {
 	int len;
 
 	len = ft_strlen(str);
 	while (len-- > 0)
-		ft_putchar_fd('=', 1);
+		ft_putchar_fd(underchar, 1);
 }
 
 static void	header(char *str)
 {
 	ft_putendl_fd(str, 1);
-	underline(str);
+	underline(str, '=');
 	ft_putchar_fd('\n', 1);
-}	
+}
+
+static void testememcmp(char um, char dois)
+{
+	int r_og;
+	int r_ft;
+
+	r_og = memcmp(&um, &dois, 1);
+	r_ft = ft_memcmp(&um, &dois, 1);
+
+	if ((r_ft > 0 && r_og < 0)
+		|| (r_ft < 0 && r_og > 0))
+		printf(">>\t");
+	else
+		printf("\t");
+	printf("%d\t%d\t", um, dois);
+	printf("memcmp: %d\tft_memcmp: %d", r_og, r_ft);
+	if ((r_ft > 0 && r_og < 0)
+		|| (r_ft < 0 && r_og > 0))
+		printf("\t<<\n");
+	else
+		printf("\t\n");
+}
 
 int	main(void)
 {
@@ -41,14 +65,22 @@ int	main(void)
 	// ft_putendl_fd(recebe, 1);
 	// header("Testing toupper");
 	// header("Testing tolower");
-	header("Testing strchr");
-	char test_strchr[10] = "AAAABAABA";
-	ft_putendl_fd(test_strchr, 1);
-	ft_putendl_fd(ft_strchr(test_strchr, 'C'), 1);
+	// header("Testing strchr");
+	// char test_strchr[10] = "AAAABAABA";
+	// ft_putendl_fd(test_strchr, 1);
+	// ft_putendl_fd(ft_strchr(test_strchr, 'C'), 1);
 	// header("Testing strrchr");
 	// header("Testing strncmp");
 	// header("Testing memchr");
-	// header("Testing memcmp");
+	header("Testing memcmp");
+	testememcmp(0, 0);
+	testememcmp(0, 1);
+	testememcmp(0, -1);
+	testememcmp(0, 128);
+	testememcmp(1, 0);
+	testememcmp(-1, 0);
+	testememcmp(-128, 0);
+	testememcmp(255, 0);
 	// header("Testing strnstr");
 	// header("Testing atoi");
 	// header("Testing calloc");
