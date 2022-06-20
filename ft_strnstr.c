@@ -48,7 +48,7 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 	int	buff;
 
 	buff = 0;
-	while (len-- > 0)
+	while (len-- >= 0)
 	{
 		if (*big == *(little + buff))
 			buff++;
