@@ -55,7 +55,7 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 		else if (*big != *(little + buff))
 			buff=0;
 		if (*(little + buff) == '\0')
-			return ((char *) (big - buff));
+			return ((char *) (big - (buff - 1)));
 		if (*big == '\0')
 			break;
 		big++;
