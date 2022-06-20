@@ -18,7 +18,7 @@ static void	header(char *str)
 	ft_putchar_fd('\n', 1);
 }
 
-static void testememcmp(char um, char dois)
+static void test_memcmp(char um, char dois)
 {
 	int r_og;
 	int r_ft;
@@ -38,6 +38,12 @@ static void testememcmp(char um, char dois)
 		printf("\t<<\n");
 	else
 		printf("\t\n");
+}
+
+void	test_strnstr(void)
+{
+	char a = 'A';
+	a++;
 }
 
 int	main(void)
@@ -73,15 +79,16 @@ int	main(void)
 	// header("Testing strncmp");
 	// header("Testing memchr");
 	header("Testing memcmp");
-	testememcmp(0, 0);
-	testememcmp(0, 1);
-	testememcmp(0, -1);
-	testememcmp(0, 128);
-	testememcmp(1, 0);
-	testememcmp(-1, 0);
-	testememcmp(-128, 0);
-	testememcmp(255, 0);
+	test_memcmp(0, 0);
+	test_memcmp(0, 1);
+	test_memcmp(0, -1);
+	test_memcmp(0, 128);
+	test_memcmp(1, 0);
+	test_memcmp(-1, 0);
+	test_memcmp(-128, 0);
+	test_memcmp(255, 0);
 	// header("Testing strnstr");
+	test_strnstr();
 	// header("Testing atoi");
 	// header("Testing calloc");
 	// header("Testing strdup");

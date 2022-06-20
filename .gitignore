@@ -50,7 +50,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Virtual Environment inside gitpod
+# Virtual Environment
 venv
 venv/*
 
