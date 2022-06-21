@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 20:49:57 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/17 17:15:16 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/21 00:26:02 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,44 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t counter;
-	size_t total;
+	size_t	dst_size;
+	size_t	src_size;
+	size_t	total;
 	
-	total = ft_strlen(dst) + ft_strlen(src);
+	dst_size = ft_strlen(dst);
+	src_size = ft_strlen(src);
+	total = dst_size + src_size;
 
-	if (size <= ft_strlen(dst))
-		return (ft_strlen(src) + size);
-	counter = 0;
-	while (*dst != '\0')
-		dst++;
-	while ((*src != '\0') && counter < (size - 1))
-	{
+//	while (size-- > 1)
+	if (size <= dst_size)
+		return (src_size);
+	dst += dst_size;
+	size -= dst_size;
+	while ( size-- > 1 && *src != '\0')
 		*dst++ = *src++;
-		counter++;
-	}	
 	*dst = '\0';
 	return (total);
 }
+
+// size_t	ft_strlcat(char *dst, const char *src, size_t size)
+// {
+// 	size_t	total;
+
+// 	if (size < ft_strlen(dst))
+// 		return(ft_strlen(src) + size);
+// 	total = ft_strlen(src) + ft_strlen(dst);
+// 	dst += ft_strlen(dst);
+// 	while (size-- > 1)
+// 	{
+// 		if (*src == '\0')
+// 			break;
+// 		else
+// 		{
+// 			*dst = *src;
+// 			src++;
+// 			dst++;
+// 		}
+// 	}
+// 	*dst = '\0';
+// 	return(total);
+// }

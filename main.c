@@ -18,32 +18,44 @@ static void	header(char *str)
 	ft_putchar_fd('\n', 1);
 }
 
-static void test_memcmp(char um, char dois)
+// static void test_memcmp(char um, char dois)
+// {
+// 	int r_og;
+// 	int r_ft;
+
+// 	r_og = memcmp(&um, &dois, 1);
+// 	r_ft = ft_memcmp(&um, &dois, 1);
+
+// 	if ((r_ft > 0 && r_og < 0)
+// 		|| (r_ft < 0 && r_og > 0))
+// 		printf(">>\t");
+// 	else
+// 		printf("\t");
+// 	printf("%d\t%d\t", um, dois);
+// 	printf("memcmp: %d\tft_memcmp: %d", r_og, r_ft);
+// 	if ((r_ft > 0 && r_og < 0)
+// 		|| (r_ft < 0 && r_og > 0))
+// 		printf("\t<<\n");
+// 	else
+// 		printf("\t\n");
+// }
+
+// void	test_strnstr(void)
+// {
+// 	char a = 'A';
+// 	a++;
+// }
+
+void	test_strlcat(char *src, size_t len)
 {
-	int r_og;
-	int r_ft;
-
-	r_og = memcmp(&um, &dois, 1);
-	r_ft = ft_memcmp(&um, &dois, 1);
-
-	if ((r_ft > 0 && r_og < 0)
-		|| (r_ft < 0 && r_og > 0))
-		printf(">>\t");
-	else
-		printf("\t");
-	printf("%d\t%d\t", um, dois);
-	printf("memcmp: %d\tft_memcmp: %d", r_og, r_ft);
-	if ((r_ft > 0 && r_og < 0)
-		|| (r_ft < 0 && r_og > 0))
-		printf("\t<<\n");
-	else
-		printf("\t\n");
-}
-
-void	test_strnstr(void)
-{
-	char a = 'A';
-	a++;
+	size_t	dst_size = 30;
+	size_t total;
+	char dest[dst_size];
+	
+	ft_bzero(dest, dst_size);
+	ft_memset(dest, '0', 5);
+	total = ft_strlcat(dest, src, len);
+	printf("%s: return %li\n", dest, total);
 }
 
 int	main(void)
@@ -61,8 +73,15 @@ int	main(void)
 	// header("Testing memcpy");
 	// header("Testing memmove");
 	// header("Testing strlcpy");
-	// header("Testing strlcat");
-	// char recebe[31];
+	header("Testing strlcat");
+	test_strlcat("11111", 7);
+	test_strlcat("11111", 10);
+	test_strlcat("11111", 11);
+	test_strlcat("1111111111", 20);
+	test_strlcat("1111111111", 21);
+	test_strlcat("1111111111", 22);
+	test_strlcat("8888", 4);
+	test_strlcat("8888", 0);
 	// ft_bzero(recebe, 31);
 	// ft_memset(recebe, 'A', 10);
 	// ft_putendl_fd(recebe, 1);
@@ -78,17 +97,17 @@ int	main(void)
 	// header("Testing strrchr");
 	// header("Testing strncmp");
 	// header("Testing memchr");
-	header("Testing memcmp");
-	test_memcmp(0, 0);
-	test_memcmp(0, 1);
-	test_memcmp(0, -1);
-	test_memcmp(0, 128);
-	test_memcmp(1, 0);
-	test_memcmp(-1, 0);
-	test_memcmp(-128, 0);
-	test_memcmp(255, 0);
+	// header("Testing memcmp");
+	// test_memcmp(0, 0);
+	// test_memcmp(0, 1);
+	// test_memcmp(0, -1);
+	// test_memcmp(0, 128);
+	// test_memcmp(1, 0);
+	// test_memcmp(-1, 0);
+	// test_memcmp(-128, 0);
+	// test_memcmp(255, 0);
 	// header("Testing strnstr");
-	test_strnstr();
+	// test_strnstr();
 	// header("Testing atoi");
 	// header("Testing calloc");
 	// header("Testing strdup");
