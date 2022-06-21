@@ -58,6 +58,14 @@ void	test_strlcat(char *src, size_t len)
 	printf("%s: return %li\n", dest, total);
 }
 
+void test_strnstr(char *agulha, size_t len)
+{
+	char palavreado[11];
+	ft_strlcpy(palavreado, "palavreado", 11);
+	printf("procurando %s em %s com len = %li:\t",agulha, palavreado, len);
+	printf("%s\n", ft_strnstr("palavreado", agulha, len));
+}
+
 int	main(void)
 {
 	// header("Testing isalpha");
@@ -73,15 +81,16 @@ int	main(void)
 	// header("Testing memcpy");
 	// header("Testing memmove");
 	// header("Testing strlcpy");
-	header("Testing strlcat");
-	test_strlcat("11111", 7);
-	test_strlcat("11111", 10);
-	test_strlcat("11111", 11);
-	test_strlcat("1111111111", 20);
-	test_strlcat("1111111111", 21);
-	test_strlcat("1111111111", 22);
-	test_strlcat("8888", 4);
-	test_strlcat("8888", 0);
+	// header("Testing strlcat");
+	// test_strlcat("11111", 7);
+	// test_strlcat("11111", 10);
+	// test_strlcat("11111", 11);
+	// test_strlcat("1111111111", 20);
+	// test_strlcat("1111111111", 21);
+	// test_strlcat("1111111111", 22);
+	// test_strlcat("8888", 4);
+	// test_strlcat("8888", 0);
+	// ft_putendl_fd("", 1);
 	// ft_bzero(recebe, 31);
 	// ft_memset(recebe, 'A', 10);
 	// ft_putendl_fd(recebe, 1);
@@ -106,8 +115,12 @@ int	main(void)
 	// test_memcmp(-1, 0);
 	// test_memcmp(-128, 0);
 	// test_memcmp(255, 0);
-	// header("Testing strnstr");
-	// test_strnstr();
+	header("Testing strnstr");
+	test_strnstr("ead", 11);
+	test_strnstr("ead", 10);
+	test_strnstr("ead", 9);
+//	test_strnstr("ead", 8);
+	test_strnstr("", 8);
 	// header("Testing atoi");
 	// header("Testing calloc");
 	// header("Testing strdup");
