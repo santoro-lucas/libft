@@ -25,7 +25,7 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 			buff=0;
 		big++;
 	}
-	if (buff == ft_strlen(little))
+	if (buff == ft_strlen(little) || *(little + buff) == '\0')
 		return ((char *) (big - (buff)));
 	else
 		return (NULL);
