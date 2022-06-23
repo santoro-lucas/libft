@@ -6,11 +6,15 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:38:51 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/23 04:30:26 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/23 23:52:37 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
+#include <bsd/string.h>
+#include <sys/cdefs.h>
 
 char	*ft_strnstr(const char	*big, const char *little, size_t len)
 {
@@ -25,8 +29,8 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 			buff=0;
 		big++;
 	}
-	if (buff == ft_strlen(little) || *(little + buff) == '\0')
-		return ((char *) (big - (buff)));
-	else
+	if (buff < ft_strlen(little) /*|| *(little + buff) == '\0'*/)
 		return (NULL);
+	else
+		return ((char *) (big - (buff)));
 }
