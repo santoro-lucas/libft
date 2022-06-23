@@ -46,11 +46,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // 		if (*src == '\0')
 // 			break;
 // 		else
-// 		{
-// 			*dst = *src;
-// 			src++;
-// 			dst++;
-// 		}
+// 			*dst++ = *src++;
 // 	}
 // 	*dst = '\0';
 // 	return(total);
