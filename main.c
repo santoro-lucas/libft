@@ -48,25 +48,48 @@ static void	header(char *str)
 // 	a++;
 // }
 
-void	test_strlcat(char *src, size_t len)
-{
-	size_t	dst_size = 30;
-	size_t total_ft;
-	size_t total_bsd;
-	char dest[dst_size];
-	
-	ft_bzero(dest, dst_size);
-	ft_memset(dest, '.', 8);
-	total_ft = ft_strlcat(dest, src, len);
-	printf("%s: ft: %li\n", dest, total_ft);
+//void	test_strlcat(char *src, size_t len)
+//{
+//	size_t	dst_size = 30;
+//	size_t total_ft;
+//	size_t total_bsd;
+//	char dest[dst_size];
+//	
+//	ft_bzero(dest, dst_size);
+//	ft_memset(dest, '.', 8);
+//	total_ft = ft_strlcat(dest, src, len);
+//	printf("%s: ft: %li\n", dest, total_ft);
+//
+//	ft_bzero(dest, dst_size);
+//	ft_memset(dest, '.', 8);
+//	total_bsd = strlcat(dest, src, len);
+//	printf("%s: bsd %li\n", dest, total_bsd);
+//	if (total_ft != total_bsd)
+//		printf("error!");
+//	puts("\n");
+//}
 
-	ft_bzero(dest, dst_size);
-	ft_memset(dest, '.', 8);
-	total_bsd = strlcat(dest, src, len);
-	printf("%s: bsd %li\n", dest, total_bsd);
-	if (total_ft != total_bsd)
-		printf("error!");
-	puts("\n");
+void	test_strlcat(char *src, size_t size)
+{
+	char	array_ft[20];
+	char	array_bsd[20];
+	size_t	res_ft;
+	size_t	res_bsd;
+
+	bzero(array_ft, sizeof(array_ft));
+	bzero(array_bsd, sizeof(array_bsd));
+	memset(array_ft, '.', 5);
+	memset(array_bsd, '.', 5);
+	res_ft = ft_strlcat(array_ft, src, size);
+	res_bsd = strlcat(array_bsd, src, size);
+	if (res_ft != res_bsd)
+		printf("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n\n");
+	printf("ft:  (%li)\t%s\n",res_ft, array_ft);
+	printf("bsd: (%li)\t%s\n",res_bsd, array_bsd);
+	if (res_ft != res_bsd)
+		printf("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
+	else
+		printf("-------------------------------------\n");
 }
 
 // void test_strnstr(char *palheiro, char *agulha, size_t len)
@@ -95,14 +118,13 @@ int	main(void)
 //	header("Testing memmove");
 //	header("Testing strlcpy");
 	header("Testing strlcat");
-	test_strlcat("11111", 7);
-	test_strlcat("11111", 10);
-	test_strlcat("11111", 11);
-	test_strlcat("1111111111", 20);
-	test_strlcat("1111111111", 21);
-	test_strlcat("1111111111", 22);
-	test_strlcat("8888", 4);
-	test_strlcat("8888", 0);
+	test_strlcat("abcdefghij", 16);
+	test_strlcat("abcdefghij", 15);
+	test_strlcat("abcdefghij", 14);
+	test_strlcat("abcdefghij", 6);
+	test_strlcat("abcdefghij", 5);
+	test_strlcat("abcdefghij", 4);
+	test_strlcat("abcdefghij", 0);
 //	ft_putendl_fd("", 1);
 // ft_bzero(recebe, 31);
 // ft_memset(recebe, 'A', 10);

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-/* size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_size;
 	size_t	src_size;
@@ -24,7 +24,7 @@
 
 //	while (size-- > 1)
 	if (size <= dst_size)
-		return (src_size);
+		return (src_size + size);
 	dst += dst_size;
 	size -= dst_size;
 	while ( size-- > 1 && *src != '\0')
@@ -32,7 +32,7 @@
 	//strlcpy(dst, src, )
 	*dst = '\0';
 	return (total);
-} */
+}
 
 // size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // {
@@ -53,16 +53,16 @@
 // 	return(total);
 // }
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
-{
-	size_t dst_size;
-	size_t total;
-	
-	dst_size = ft_strlen(dst);
-	total = dst_size + ft_strlen(src);
-		
-	dst += dst_size;
-	size -= dst_size;
-	ft_strlcpy (dst, src, size);
-	return (total);
-}
+//size_t	ft_strlcat(char *dst, const char *src, size_t size)
+//{
+//	size_t dst_size;
+//	size_t total;
+//	
+//	dst_size = ft_strlen(dst);
+//	total = dst_size + ft_strlen(src);
+//		
+//	dst += dst_size;
+//	size -= dst_size;
+//	ft_strlcpy (dst, src, size);
+//	return (total);
+//}

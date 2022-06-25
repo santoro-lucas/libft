@@ -62,4 +62,3 @@ venv/*
 *.o
 *.a
 *.swp
-tester/
