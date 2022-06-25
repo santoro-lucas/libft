@@ -34,9 +34,11 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME) 
 
-$(NAME): libft.h $(SRCS)
-	$(CC) $(CFLAGS) -c $(SRCS)
+$(NAME): libft.h $(OBJS)
 	ar -rcs libft.a $(OBJS)
+
+$(OBJS):$(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
 
 re: fclean all
 
