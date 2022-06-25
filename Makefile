@@ -35,7 +35,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME) 
 
 $(NAME): libft.h $(OBJS)
-	ar -rcs libft.a $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 $(OBJS):$(SRCS)
 	$(CC) $(CFLAGS) -c $(SRCS)

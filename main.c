@@ -84,8 +84,8 @@ void	test_atoi(char *nbr)
 
 	result_atoi = atoi(nbr);
 	result_ft_atoi = ft_atoi(nbr);
-	printf("%s\tog %i\t| ft %i",
-		nbr, result_atoi, result_ft_atoi);
+	printf("og %i\t| ft %i",
+		result_atoi, result_ft_atoi);
 	if (result_atoi != result_ft_atoi)
 		printf("\tXXXXXXXXXXX");
 	printf("\n");
@@ -140,7 +140,15 @@ int	main(void)
 	// test_strnstr("palavra", "vra", -7);
 	// test_strnstr("palavra", "vra", -200000);
 	header("Testing atoi");
-	test_atoi("123");
+	test_atoi(" 123");
+	test_atoi("\t123");
+	test_atoi("\n123");
+	test_atoi("\v123");
+	test_atoi("\f123");
+	test_atoi("\r123");
+	test_atoi("\t \v123");
+	test_atoi("\f\r 123");
+	test_atoi("\r\t\n123");
 	test_atoi("a123");
 	test_atoi("1s3");
 	test_atoi("+123");
