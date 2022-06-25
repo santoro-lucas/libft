@@ -62,3 +62,5 @@ venv/*
 *.o
 *.a
 *.swp
+tester_tripouille
+tester_tripouille/*
