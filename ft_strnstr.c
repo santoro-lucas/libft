@@ -6,27 +6,28 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:38:51 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/23 23:59:51 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/25 00:20:32 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int are_same(const char *big, const char *little)
+{
+	if (ft_strncmp(big, little, ft_strlen(little)) == 0)
+		return (1);
+	return (0);
+}
+
 char	*ft_strnstr(const char	*big, const char *little, size_t len)
 {
-	size_t	offset;
-
-	offset = 0;
-	while (len-- && *big != '\0' && *(little + offset) != '\0')
+	if (len > ft_strlen(big))
+		len = ft_strlen(big);
+	while (len-- >= (ft_strlen(little)))
 	{
-		if (*big == *(little + offset))
-			offset++;
-		else
-			offset = 0;
+		if (are_same(big, little))
+			return((char *) big);
 		big++;
 	}
-	if (offset < ft_strlen(little) /*|| *(little + offset) == '\0'*/)
-		return (NULL);
-	else
-		return ((char *) (big - (offset)));
+	return (NULL);
 }
