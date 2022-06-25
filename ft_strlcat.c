@@ -6,13 +6,13 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 20:49:57 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/21 00:26:02 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/25 00:43:14 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+/* size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_size;
 	size_t	src_size;
@@ -29,9 +29,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size -= dst_size;
 	while ( size-- > 1 && *src != '\0')
 		*dst++ = *src++;
+	//strlcpy(dst, src, )
 	*dst = '\0';
 	return (total);
-}
+} */
 
 // size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // {
@@ -51,3 +52,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // 	*dst = '\0';
 // 	return(total);
 // }
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t dst_size;
+	size_t total;
+	
+	dst_size = ft_strlen(dst);
+	total = dst_size + ft_strlen(src);
+		
+	dst += dst_size;
+	size -= dst_size;
+	ft_strlcpy (dst, src, size);
+	return (total);
+}

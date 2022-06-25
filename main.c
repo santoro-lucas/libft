@@ -4,27 +4,6 @@
 #include <bsd/string.h>
 #include <sys/cdefs.h>
 
-
-char * strnstr(const char *s, const char *find, size_t slen)
-{
-	char c, sc;
-	size_t len;
-
-	if ((c = *find++) != '\0') {
-		len = strlen(find);
-		do {
-			do {
-				if (slen-- < 1 || (sc = *s++) == '\0')
-					return (NULL);
-			} while (sc != c);
-			if (len > slen)
-				return (NULL);
-		} while (strncmp(s, find, len) != 0);
-		s--;
-	}
-	return ((char *)s);
-}
-
 static void	underline(char *str, char underchar)
 {
 	int len;
@@ -72,26 +51,35 @@ static void	header(char *str)
 void	test_strlcat(char *src, size_t len)
 {
 	size_t	dst_size = 30;
-	size_t total;
+	size_t total_ft;
+	size_t total_bsd;
 	char dest[dst_size];
 	
 	ft_bzero(dest, dst_size);
-	ft_memset(dest, '0', 5);
-	total = ft_strlcat(dest, src, len);
-	printf("%s: return %li\n", dest, total);
+	ft_memset(dest, '.', 8);
+	total_ft = ft_strlcat(dest, src, len);
+	printf("%s: ft: %li\n", dest, total_ft);
+
+	ft_bzero(dest, dst_size);
+	ft_memset(dest, '.', 8);
+	total_bsd = strlcat(dest, src, len);
+	printf("%s: bsd %li\n", dest, total_bsd);
+	if (total_ft != total_bsd)
+		printf("error!");
+	puts("\n");
 }
 
-void test_strnstr(char *palheiro, char *agulha, size_t len)
-{
-	char *checkee1 = ft_strnstr(palheiro, agulha, len);
-	char *checkee2 = strnstr(palheiro, agulha, len);
+// void test_strnstr(char *palheiro, char *agulha, size_t len)
+// {
+// 	char *checkee1 = ft_strnstr(palheiro, agulha, len);
+// 	char *checkee2 = strnstr(palheiro, agulha, len);
 	
-	if (checkee1 != checkee2)
-		printf("============================================================= || ");
-	printf("find %s in: %s with len = %li\t", agulha, palheiro, len);
-	printf("ft: %s\t", checkee1);
-	printf("bsd: %s\n", checkee2);
-}
+// 	if (checkee1 != checkee2)
+// 		printf("============================================================= || ");
+// 	printf("find %s in: %s with len = %li\t", agulha, palheiro, len);
+// 	printf("ft: %s\t", checkee1);
+// 	printf("bsd: %s\n", checkee2);
+// }
 
 int	main(void)
 {
@@ -106,30 +94,30 @@ int	main(void)
 //	header("Testing memcpy");
 //	header("Testing memmove");
 //	header("Testing strlcpy");
-//	header("Testing strlcat");
-//	test_strlcat("11111", 7);
-//	test_strlcat("11111", 10);
-//	test_strlcat("11111", 11);
-//	test_strlcat("1111111111", 20);
-//	test_strlcat("1111111111", 21);
-//	test_strlcat("1111111111", 22);
-//	test_strlcat("8888", 4);
-//	test_strlcat("8888", 0);
+	header("Testing strlcat");
+	test_strlcat("11111", 7);
+	test_strlcat("11111", 10);
+	test_strlcat("11111", 11);
+	test_strlcat("1111111111", 20);
+	test_strlcat("1111111111", 21);
+	test_strlcat("1111111111", 22);
+	test_strlcat("8888", 4);
+	test_strlcat("8888", 0);
 //	ft_putendl_fd("", 1);
-	// ft_bzero(recebe, 31);
-	// ft_memset(recebe, 'A', 10);
-	// ft_putendl_fd(recebe, 1);
-	// ft_putnbr_fd(ft_strlcat(recebe, "TUM", 3), 1);
-	// ft_putchar_fd('\n', 1);
-	// ft_putendl_fd(recebe, 1);
-	// header("Testing toupper");
-	// header("Testing tolower");
-	// header("Testing strchr");
-	// char test_strchr[10] = "AAAABAABA";
-	// ft_putendl_fd(test_strchr, 1);
-	// ft_putendl_fd(ft_strchr(test_strchr, 'C'), 1);
-	// header("Testing strrchr");
-	// header("Testing strncmp");
+// ft_bzero(recebe, 31);
+// ft_memset(recebe, 'A', 10);
+// ft_putendl_fd(recebe, 1);
+// ft_putnbr_fd(ft_strlcat(recebe, "TUM", 3), 1);
+// ft_putchar_fd('\n', 1);
+// ft_putendl_fd(recebe, 1);
+// header("Testing toupper");
+// header("Testing tolower");
+// header("Testing strchr");
+// char test_strchr[10] = "AAAABAABA";
+// ft_putendl_fd(test_strchr, 1);
+// ft_putendl_fd(ft_strchr(test_strchr, 'C'), 1);
+// header("Testing strrchr");
+// header("Testing strncmp");
 	// header("Testing memchr");
 //	header("Testing memcmp");
 //	test_memcmp(0, 0);
@@ -140,18 +128,18 @@ int	main(void)
 //	test_memcmp(-1, 0);
 //	test_memcmp(-128, 0);
 //	test_memcmp(255, 0);
-	header("Testing strnstr");
-	test_strnstr("aaabcabcd", "aabc", -1);
-	test_strnstr("aaabcabcd", "abcd", 9);
-	test_strnstr("palavra", "ra", 7);
-	test_strnstr("palavra", "", 20);
-	test_strnstr("palavra", "pal", -6);
-	test_strnstr("palavra", "ala", 8);
-	test_strnstr("palavra", "lav", 7);
-	test_strnstr("palavra", "avr", 6);
-	test_strnstr("palavra", "vra", -6);
-	test_strnstr("palavra", "vra", -7);
-	test_strnstr("palavra", "vra", -200000);
+	// header("Testing strnstr");
+	// test_strnstr("aaabcabcd", "aabc", -1);
+	// test_strnstr("aaabcabcd", "abcd", 9);
+	// test_strnstr("palavra", "ra", 7);
+	// test_strnstr("palavra", "", 20);
+	// test_strnstr("palavra", "pal", -6);
+	// test_strnstr("palavra", "ala", 8);
+	// test_strnstr("palavra", "lav", 7);
+	// test_strnstr("palavra", "avr", 6);
+	// test_strnstr("palavra", "vra", -6);
+	// test_strnstr("palavra", "vra", -7);
+	// test_strnstr("palavra", "vra", -200000);
 	// header("Testing atoi");
 	// header("Testing calloc");
 	// header("Testing strdup");
