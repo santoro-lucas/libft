@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:57:06 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/09 17:37:10 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/26 20:15:58 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,8 @@ char	*ft_strdup(char *s)
 	char	*dup;
 	int		len;
 
-	len = ft_strlen(s);
-	dup = malloc(len * sizeof(char) + 1);
-	while (*s != '\0')
-		*dup++ = *s++;
-	*dup = '\0';
-	dup -= len;
+	len = ft_strlen(s) + 1;
+	dup = malloc(len);
+	ft_strlcpy(dup, s, len);
 	return (dup);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf("%s\n", ft_strdup("Hello, World!"));
-// 	return (0);
-// }
