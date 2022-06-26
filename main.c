@@ -69,7 +69,7 @@ static void	header(char *str)
 // {
 // 	char *checkee1 = ft_strnstr(palheiro, agulha, len);
 // 	char *checkee2 = strnstr(palheiro, agulha, len);
-       
+
 // 	if (checkee1 != checkee2)
 // 		printf("============================================================= || ");
 // 	printf("find %s in: %s with len = %li\t", agulha, palheiro, len);
@@ -91,18 +91,27 @@ static void	header(char *str)
 // 	printf("\n");
 // }
 
-void	test_calloc(size_t nmemb, size_t size)
-{
-	void	*libc_ptr;
-	void	*ft_ptr;
+// void	test_calloc(size_t nmemb, size_t size)
+// {
+// 	void	*libc_ptr;
+// 	void	*ft_ptr;
 
-	libc_ptr = calloc(nmemb, size);
-	ft_ptr = ft_calloc(nmemb, size);
-	printf("%li members, %li size:\t", nmemb, size);
-	if (ft_memcmp(libc_ptr, ft_ptr, size) == 0)
-		printf("OK\n");
-	else
-		printf("KO\t<<<<<<\n");
+// 	libc_ptr = calloc(nmemb, size);
+// 	ft_ptr = ft_calloc(nmemb, size);
+// 	printf("%li members, %li size:\t", nmemb, size);
+// 	if (ft_memcmp(libc_ptr, ft_ptr, size) == 0)
+// 		printf("OK\n");
+// 	else
+// 		printf("KO\t<<<<<<\n");
+// }
+
+void	test_substr(const char *s, unsigned int start, size_t len)
+{
+	char *str;
+
+	str = ft_substr(s, start, len);
+	printf("string: %s\nsub:%s\n\n", s, str);
+	free(str);
 }
 
 int	main(void)
@@ -175,15 +184,22 @@ int	main(void)
 	// test_atoi("00001");
 	// test_atoi("2147483647");
 	// test_atoi("-2147483648");
-	header("Testing calloc");
-	test_calloc(1, 1);
-	test_calloc(10, 1);
-	test_calloc(100, 4);
-	test_calloc(200, sizeof(long));
-	test_calloc(0, 300);
-	test_calloc(50, sizeof(int));
+	// header("Testing calloc");
+	// test_calloc(1, 1);
+	// test_calloc(10, 1);
+	// test_calloc(100, 4);
+	// test_calloc(200, sizeof(long));
+	// test_calloc(0, 300);
+	// test_calloc(50, sizeof(int));
 	// header("Testing strdup");
-	// header("Testing substr");
+	header("Testing substr");
+	test_substr("Running up that hill", 8, 13);
+	test_substr("Running up that hill", 0, 11);
+	test_substr("Running up that hill", 16, 4);
+	test_substr("Running up that hill", 16, 12);
+	test_substr("Running up that hill", 1, 1);
+	test_substr("Running up that hill", 8, 77);
+	test_substr("Running up that hill", 8, 0);
 	// header("Testing strjoin");
 	// header("Testing strtrim");
 	// header("Testing split");
