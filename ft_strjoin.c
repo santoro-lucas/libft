@@ -6,32 +6,20 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 23:36:23 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/14 21:58:07 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/26 21:17:02 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	copy_each(char const **origin, char **dest)
-{
-	while (**origin != '\0')
-	{
-		**dest = **origin;
-		(*origin)++;
-		(*dest)++;
-	}
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	int		size;
 
-	size = (ft_strlen(s1) + ft_strlen(s2));
-	str = malloc(size) + 1;
-	copy_each(&s1, &str);
-	copy_each(&s2, &str);
-	*str = '\0';
-	str = str - size;
+	size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = malloc(size);
+	ft_strlcpy(str, s1, size);
+	ft_strlcat(str, s2, size);
 	return (str);
 }
