@@ -105,19 +105,27 @@ static void	header(char *str)
 // 		printf("KO\t<<<<<<\n");
 // }
 
-void	test_substr(const char *s, unsigned int start, size_t len)
+//void	test_substr(const char *s, unsigned int start, size_t len)
+//{
+//	char *str;
+//
+//	str = ft_substr(s, start, len);
+//	printf("string: %s\nsub:%s\n\n", s, str);
+//	free(str);
+//}
+//
+//void	test_putnbr_fd(int nbr)
+//{
+//	ft_putnbr_fd(nbr, 1);
+//	ft_putchar_fd('\n', 1);
+//}
+//
+void	test_itoa(int nbr)
 {
-	char *str;
+	char *result_itoa;
 
-	str = ft_substr(s, start, len);
-	printf("string: %s\nsub:%s\n\n", s, str);
-	free(str);
-}
-
-void	test_putnbr_fd(int nbr)
-{
-	ft_putnbr_fd(nbr, 1);
-	ft_putchar_fd('\n', 1);
+	result_itoa = ft_itoa(nbr);
+	printf("%i\t%s\n", nbr, result_itoa);
 }
 
 int	main(void)
@@ -210,25 +218,30 @@ int	main(void)
 	// header("Testing strtrim");
 	// header("Testing split");
 	// header("Testing strmapi");
-	// header("Testing itoa");
+	header("Testing itoa");
+	test_itoa(0);
+	test_itoa(12345);
+	test_itoa(-12345);
+	test_itoa(+12345);
+	test_itoa(-12345);
 	// header("Testing striteri");
 	// header("Testing putchar_fd");
 	// header("Testing putstr_fd");
 	// header("Testing putendl_fd");
-	header("Testing putnbr_fd");
-	test_putnbr_fd(42);
-	test_putnbr_fd(-42);	
-	test_putnbr_fd(0);
-	test_putnbr_fd(1);
-	test_putnbr_fd(-1);
-	test_putnbr_fd(5555);
-	test_putnbr_fd(2147483647);
-	test_putnbr_fd(-2147483648);
-	test_putnbr_fd(2147483648);
-	test_putnbr_fd(30000);
-	test_putnbr_fd(00000);
-	test_putnbr_fd(-100000);
-	test_putnbr_fd(+100000);
-	return (0);
+//	header("Testing putnbr_fd");
+//	test_putnbr_fd(42);
+//	test_putnbr_fd(-42);	
+//	test_putnbr_fd(0);
+//	test_putnbr_fd(1);
+//	test_putnbr_fd(-1);
+//	test_putnbr_fd(5555);
+//	test_putnbr_fd(2147483647);
+//	test_putnbr_fd(-2147483648);
+//	test_putnbr_fd(2147483648);
+//	test_putnbr_fd(30000);
+//	test_putnbr_fd(00000);
+//	test_putnbr_fd(-100000);
+//	test_putnbr_fd(+100000);
+//	return (0);
 }
 

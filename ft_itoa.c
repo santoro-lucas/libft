@@ -6,56 +6,51 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:59:11 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/11 00:14:59 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:26:51 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-#include <unistd.h>
 
-// Atençao: o estado atual dessa função é meramente uma cópia do algoritmo
-// originalmente usado para a ft_putnbr da piscina
-// como inspiração para o desenvolvimento dela
-// Nem o protótipo e nem a função estão de acordo com o solicitado. 
-// Corrigir isso assim que for trabalhar na função
-
-int	count_chars(int n)
+char*	set_array(int n)
 {
 	unsigned int	figures;
+	char			*numstr;	
 
 	figures = 0;
-	if (n < 0)
-	{
-		n *= -1;
+	if (n <= 0)
 		figures++;
-	}
-	while (n > 0)
+	while (n)
 	{
 		n /= 10;
 		figures++;
 	}
-	return (figures);
+	numstr = malloc(figures + 1);
+	ft_memset(numstr, '0', figures);
+	ft_bzero(numstr + figures, 1);
+	return (numstr);
 }
 
-// Code highly reused from ft_putnbr
-// Remember to check
-void	ft_putnbr(int n)
+char	*ft_itoa(int n)
 {
-	char *numstr;
+	// int		m;
+	char	*numstr;
 
-	numstr = malloc((count_chars(n) * sizeof(char)) + 1);
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n = n * -1;
-	}
-	if (n / 10 < 1)
-		d = '0' + d;
-		write(&d, 1);
-		numstr++;
-	else
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
+	numstr = set_array(n);
+	// m = n;
+	// if (n == 0)
+	// 	return (numstr);
+	// if (n < 0)
+	// 	n = -n;
+	// numstr = numstr + ft_strlen(numstr);
+	// while (n/10 > 0)
+	// {
+	// 	*numstr = '0' + (n % 10);
+	// 	n /= 10;
+	// 	numstr--;
+	// }
+	// if (m < 0)
+	// 	*numstr = '-';
+	return (numstr);
 }
