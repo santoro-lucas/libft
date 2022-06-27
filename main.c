@@ -114,6 +114,12 @@ void	test_substr(const char *s, unsigned int start, size_t len)
 	free(str);
 }
 
+void	test_putnbr_fd(int nbr)
+{
+	ft_putnbr_fd(nbr, 1);
+	ft_putchar_fd('\n', 1);
+}
+
 int	main(void)
 {
 	// header("Testing isalpha");
@@ -192,14 +198,14 @@ int	main(void)
 	// test_calloc(0, 300);
 	// test_calloc(50, sizeof(int));
 	// header("Testing strdup");
-	header("Testing substr");
-	test_substr("Running up that hill", 8, 13);
-	test_substr("Running up that hill", 0, 11);
-	test_substr("Running up that hill", 16, 4);
-	test_substr("Running up that hill", 16, 12);
-	test_substr("Running up that hill", 1, 1);
-	test_substr("Running up that hill", 8, 77);
-	test_substr("Running up that hill", 8, 0);
+	// header("Testing substr");
+	// test_substr("Running up that hill", 8, 13);
+	// test_substr("Running up that hill", 0, 11);
+	// test_substr("Running up that hill", 16, 4);
+	// test_substr("Running up that hill", 16, 12);
+	// test_substr("Running up that hill", 1, 1);
+	// test_substr("Running up that hill", 8, 77);
+	// test_substr("Running up that hill", 8, 0);
 	// header("Testing strjoin");
 	// header("Testing strtrim");
 	// header("Testing split");
@@ -209,7 +215,20 @@ int	main(void)
 	// header("Testing putchar_fd");
 	// header("Testing putstr_fd");
 	// header("Testing putendl_fd");
-	// header("Testing putnbr_fd");
-return (0);
+	header("Testing putnbr_fd");
+	test_putnbr_fd(42);
+	test_putnbr_fd(-42);	
+	test_putnbr_fd(0);
+	test_putnbr_fd(1);
+	test_putnbr_fd(-1);
+	test_putnbr_fd(5555);
+	test_putnbr_fd(2147483647);
+	test_putnbr_fd(-2147483648);
+	test_putnbr_fd(2147483648);
+	test_putnbr_fd(30000);
+	test_putnbr_fd(00000);
+	test_putnbr_fd(-100000);
+	test_putnbr_fd(+100000);
+	return (0);
 }
 
