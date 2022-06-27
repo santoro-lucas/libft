@@ -224,6 +224,11 @@ int	main(void)
 	test_itoa(-12345);
 	test_itoa(+12345);
 	test_itoa(-12345);
+	test_itoa(0);
+	test_itoa(+00000);
+	test_itoa(-42);
+	test_itoa(+42);
+	test_itoa(-3 * 4);
 	// header("Testing striteri");
 	// header("Testing putchar_fd");
 	// header("Testing putstr_fd");
