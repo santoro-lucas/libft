@@ -6,17 +6,16 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:59:11 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/27 18:26:51 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:44:38 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char*	set_array(int n)
+char	*set_array(int n)
 {
 	unsigned int	figures;
-	char			*numstr;	
+	char			*array;
 
 	figures = 0;
 	if (n <= 0)
@@ -26,31 +25,27 @@ char*	set_array(int n)
 		n /= 10;
 		figures++;
 	}
-	numstr = malloc(figures + 1);
-	ft_memset(numstr, '0', figures);
-	ft_bzero(numstr + figures, 1);
-	return (numstr);
+	array = malloc(figures + 1);
+	ft_memset(array, '0', figures);
+	ft_bzero(array + figures, 1);
+	return (array);
 }
 
 char	*ft_itoa(int n)
 {
-	// int		m;
-	char	*numstr;
+	char	*arr;
+	size_t	len;
 
-	numstr = set_array(n);
-	// m = n;
-	// if (n == 0)
-	// 	return (numstr);
-	// if (n < 0)
-	// 	n = -n;
-	// numstr = numstr + ft_strlen(numstr);
-	// while (n/10 > 0)
-	// {
-	// 	*numstr = '0' + (n % 10);
-	// 	n /= 10;
-	// 	numstr--;
-	// }
-	// if (m < 0)
-	// 	*numstr = '-';
-	return (numstr);
+	arr = set_array(n);
+	len = ft_strlen(arr);
+	if (n < 0)
+		*arr = '-';
+	else
+		n = -n;
+	while (n < 0)
+	{
+		*(arr + --len) = '0' - (n % 10);
+		n /= 10;
+	}
+	return (arr);
 }
