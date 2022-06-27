@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:44:08 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/26 22:43:33 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:50:50 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *substr;
+	char	*substr;
 
 	s += start;
 	if (len > (ft_strlen(s)))

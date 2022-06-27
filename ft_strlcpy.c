@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 20:50:00 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/25 00:34:27 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:48:49 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	src_size;
-	
+
 	src_size = ft_strlen(src);
 	if (size == 0)
 		return (src_size);

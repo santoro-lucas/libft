@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 21:23:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/25 18:28:46 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:43:09 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static int	ft_isspace(char c)
 {
 	char	jumpable[6];
 	size_t	i;
-	
-	ft_memcpy(jumpable," \t\n\v\r\f",7);
+
+	ft_memcpy(jumpable, " \t\n\v\r\f", 7);
 	i = 0;
-	while(i < 6)
+	while (i < 6)
 	{
 		if (c == jumpable[i])
 			return (1);
@@ -27,7 +27,6 @@ static int	ft_isspace(char c)
 	}
 	return (0);
 }
-
 
 int	ft_atoi(const char *nptr)
 {

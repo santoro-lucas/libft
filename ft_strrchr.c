@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:38:56 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/18 03:29:38 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:50:21 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int len;
+	int	len;
 
 	len = ft_strlen(s);
 	s += len;
