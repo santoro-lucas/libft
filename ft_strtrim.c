@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:39:02 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/26 23:39:09 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/28 22:54:07 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,18 @@ char	*ft_strtrim(const char *s1, const char *set)
 	char	*s2;
 	size_t	end;
 
-	while (ft_strchr(set, *s1))
+	while (ft_strchr(set, *s1) && *s1 != '\0')
 		s1++;
+
 	end = ft_strlen(s1);
-	while (ft_strchr(set, *(s1 + end)))
+	if (end)
+	{
 		end--;
-	s2 = malloc(end + 2);
-	ft_strlcpy(s2, s1, end + 2);
+		while (ft_strchr(set, *(s1 + end)))
+			end--;
+		end++;
+	}
+	s2 = malloc(end + 1);
+	ft_strlcpy(s2, s1, end + 1);
 	return (s2);
 }
