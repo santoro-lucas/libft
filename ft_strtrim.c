@@ -25,28 +25,17 @@ static int	ft_isinset(char c, const char *set)
 	return (0);
 }
 
-// Ignores characters in set, 
-// measures the remainder with strlen
-// then comes backwards counting characters in set
-// finally copies
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*s2;
 	int		end;
-	int		pos;
 
 	while (ft_isinset(*s1, set))
 		s1++;
 	end = ft_strlen(s1) - 1;
 	while (ft_isinset(s1[end], set))
 		end--;
-	s2 = malloc(end * sizeof(char) + 2);
-	pos = 0;
-	while (pos <= end)
-	{
-		s2[pos] = s1[pos];
-		pos++;
-	}
-	s2[pos] = '\0';
+	s2 = malloc(end + 2);
+	ft_strlcpy(s2, s1, end + 2);
 	return (s2);
 }
