@@ -14,14 +14,14 @@
 
 static int	ft_isspace(char c)
 {
-	char	jumpable[6];
+	char	jumpable[7];
 	size_t	i;
 
 	ft_memcpy(jumpable, " \t\n\v\r\f", 7);
 	i = 0;
 	while (i < 6)
 	{
-		if (c == jumpable[i])
+		if ((char) c == jumpable[i])
 			return (1);
 		i++;
 	}

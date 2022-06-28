@@ -1,7 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>
+// #include <bsd/string.h>
 #include <sys/cdefs.h>
 
 static void	underline(char *str, char underchar)
@@ -77,19 +77,19 @@ static void	header(char *str)
 // 	printf("bsd: %s\n", checkee2);
 // }
 
-// void	test_atoi(char *nbr)
-// {
-// 	int	result_atoi;
-// 	int	result_ft_atoi;
+void	test_atoi(char *nbr)
+{
+	int	result_atoi;
+	int	result_ft_atoi;
 
-// 	result_atoi = atoi(nbr);
-// 	result_ft_atoi = ft_atoi(nbr);
-// 	printf("og %i\t| ft %i",
-// 		result_atoi, result_ft_atoi);
-// 	if (result_atoi != result_ft_atoi)
-// 		printf("\tXXXXXXXXXXX");
-// 	printf("\n");
-// }
+	result_atoi = atoi(nbr);
+	result_ft_atoi = ft_atoi(nbr);
+	printf("og %i\t| ft %i",
+		result_atoi, result_ft_atoi);
+	if (result_atoi != result_ft_atoi)
+		printf("\tXXXXXXXXXXX");
+	printf("\n");
+}
 
 // void	test_calloc(size_t nmemb, size_t size)
 // {
@@ -120,14 +120,14 @@ static void	header(char *str)
 //	ft_putchar_fd('\n', 1);
 //}
 //
-void	test_itoa(int nbr)
-{
-	char *result_itoa;
-
-	result_itoa = ft_itoa(nbr);
-	printf("%i\t%s\n", nbr, result_itoa);
-}
-
+//void	test_itoa(int nbr)
+//{
+//	char *result_itoa;
+//
+//	result_itoa = ft_itoa(nbr);
+//	printf("%i\t%s\n", nbr, result_itoa);
+//}
+//
 int	main(void)
 {
 	// header("Testing isalpha");
@@ -176,28 +176,28 @@ int	main(void)
 	// test_strnstr("palavra", "vra", -6);
 	// test_strnstr("palavra", "vra", -7);
 	// test_strnstr("palavra", "vra", -200000);
-	// header("Testing atoi");
-	// test_atoi(" 123");
-	// test_atoi("\t123");
-	// test_atoi("\n123");
-	// test_atoi("\v123");
-	// test_atoi("\f123");
-	// test_atoi("\r123");
-	// test_atoi("\t \v123");
-	// test_atoi("\f\r 123");
-	// test_atoi("\r\t\n123");
-	// test_atoi("a123");
-	// test_atoi("1s3");
-	// test_atoi("+123");
-	// test_atoi("-123");
-	// test_atoi("-123tu");
-	// test_atoi("++123");
-	// test_atoi("--123");
-	// test_atoi("+-123");
-	// test_atoi("0");
-	// test_atoi("00001");
-	// test_atoi("2147483647");
-	// test_atoi("-2147483648");
+header("Testing atoi");
+test_atoi(" 123");
+test_atoi("\t123");
+test_atoi("\n123");
+test_atoi("\v123");
+test_atoi("\f123");
+test_atoi("\r123");
+test_atoi("\t \v123");
+test_atoi("\f\r 123");
+test_atoi("\r\t\n123");
+test_atoi("a123");
+test_atoi("1s3");
+test_atoi("+223");
+test_atoi("-123");
+test_atoi("-123tu");
+test_atoi("++123");
+test_atoi("--123");
+test_atoi("+-123");
+test_atoi("0");
+test_atoi("00001");
+test_atoi("2147483647");
+test_atoi("-2147483648");
 	// header("Testing calloc");
 	// test_calloc(1, 1);
 	// test_calloc(10, 1);
@@ -218,17 +218,17 @@ int	main(void)
 	// header("Testing strtrim");
 	// header("Testing split");
 	// header("Testing strmapi");
-	header("Testing itoa");
-	test_itoa(0);
-	test_itoa(12345);
-	test_itoa(-12345);
-	test_itoa(+12345);
-	test_itoa(-12345);
-	test_itoa(0);
-	test_itoa(+00000);
-	test_itoa(-42);
-	test_itoa(+42);
-	test_itoa(-3 * 4);
+//	header("Testing itoa");
+//	test_itoa(0);
+//	test_itoa(12345);
+//	test_itoa(-12345);
+//	test_itoa(+12345);
+//	test_itoa(-12345);
+//	test_itoa(0);
+//	test_itoa(+00000);
+//	test_itoa(-42);
+//	test_itoa(+42);
+//	test_itoa(-3 * 4);
 	// header("Testing striteri");
 	// header("Testing putchar_fd");
 	// header("Testing putstr_fd");
