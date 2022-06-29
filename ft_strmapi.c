@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:38:18 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/29 03:31:39 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/29 18:21:34 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (mapi);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-// 	char *result;
-
-// 	result = ft_strmapi("abracadabra", ft_toupper);
-// 	printf("%s\n", result);
-// 	return (0);
-// }
