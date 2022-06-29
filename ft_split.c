@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:36:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/29 17:45:52 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/29 17:55:17 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	**ft_split(char const *s, char c)
 {
-	return (s + c);	
+	return ((char **) s + c);	
 }
