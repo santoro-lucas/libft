@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:30:39 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/29 02:20:33 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/29 17:49:48 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ char	*ft_strdup(char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(const char *s1, const  char *set);
-// char	**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char));
-// void	ft_striteri(char *s, void (*f) (unsigned int, char*));
+void	ft_striteri(char *s, void (*f) (unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
