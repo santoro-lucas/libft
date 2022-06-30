@@ -6,30 +6,11 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:36:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/30 22:27:19 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:06:04 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
-// size_t	count_words(char const *s, char c)
-// {
-// 	size_t	count;
-
-// 	count = 0;
-// 	while (*s == c)
-// 		s++;
-// 	while (ft_strchr(s, c))
-// 	{
-// 		count++;
-// 		if (ft_strchr(s, c))
-// 			s = ft_strchr(s, c);
-// 		while (*s == c && *s != '\0')
-// 			s++;
-// 	}
-// 	return (count);
-// }
 
 size_t	count_words(char const *s, char c)
 {
@@ -53,7 +34,6 @@ char	**ft_split(char const *s, char c)
 	char	**array;
 
 	word_counter = count_words(s, c);
-	printf("%li words\n\n", word_counter);
 	pos = 0;
 	s_copy = malloc((ft_strlen(s) + 1) * sizeof (char));
 	array = malloc((word_counter + 1) * sizeof (char *));
@@ -69,14 +49,27 @@ char	**ft_split(char const *s, char c)
 	return ((char **) array);
 }
 
-int	main(void)
+#include <stdio.h>
+void	test_split(char *string, char delimiter)
 {
 	char	**coiso;
-	size_t	tal;
+	size_t	ntimes;
 
-	tal = 0;
-	coiso = ft_split("Essa aqui    eh uma frase   pra separar", ' ');
-	while (coiso[tal])
-		printf("return: %s\n", coiso[tal++]);
+	ntimes = 0;
+	coiso = ft_split(string, delimiter);
+	while (coiso[ntimes])
+	{
+		printf("%li. %s\n", ntimes, coiso[ntimes]);
+		ntimes++;
+	}
+	printf("\n");
+}
+
+int	main(void)
+{
+	test_split("Essa aqui e uma frase pra separar", ' ');
+	test_split("     Esta    impossivel    tankar o bostil         ", ' ');
+	test_split("bananada", ' ');
+	test_split("        ", ' ');
 	return (0);
 }
