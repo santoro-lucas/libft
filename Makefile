@@ -53,3 +53,6 @@ clean:
 
 fclean: clean
 	rm $(NAME)
+
+split:
+	$(CC) $(CFLAGS) ft_split.c $(NAME) && ./a.out

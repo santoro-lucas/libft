@@ -6,31 +6,54 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:36:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/29 23:05:04 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/30 05:59:11 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
+size_t	count_words(char const *s, char c)
+{
+	size_t	count;
+	
+	count = 0;
+	while (*s == c)
+		s++;
+	while (ft_strchr(s, c)) // This while is already returning pointers to each word and should be used
+	{
+		count++;
+		printf("%li\t%s\n", count, s);
+		s = ft_strchr(s, c);
+		while (*s == c)
+			s++;
+	}
+	return (count);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char phrase[1][7];
+	size_t	word_counter;
+	size_t	pointer_buffer;
+	char 	**pointer_site;
 
-	phrase [0][0] = *s;
-	// while (*(phrase + i) != '\0')
-	// {
-	// 	if (*(phrase + i) == c)
-	// 	{
-	// 		*(phrase + i) = '\0';
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
-	printf("%c\n", phrase[0][0]);
-	printf("%c\n", phrase[0][1]);
-	printf("%c\n", phrase[0][2]);
-	printf("%c\n", phrase[1][0]);
+	word_counter = count_words(s, c);
+	printf("%li\n", word_counter);
+	pointer_site = ft_calloc(word_counter + 1, sizeof (char *));
+	if (pointer_site)
+		printf("Vibe check\n");
+	while (*s == c)
+		s++;
+	pointer_buffer = 0;
+	while (pointer_buffer < word_counter)
+	{
+		//count++;
+		s = ft_strchr(s, c);
+		(pointer_site + pointer_buffer) = &s;
+		pointer_buffer++;
+		while (*s == c)
+			s++;
+	}
 	return ((char **)s + c);
 }
 
@@ -45,5 +68,5 @@ char	**ft_split(char const *s, char c)
 
 int	main(void)
 {
-	ft_split("Esta e uma frase a ser separada", ' ');
+	ft_split("    Esta    e uma    frase    a ser     separada     ", ' ');
 }
