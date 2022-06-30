@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:36:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/30 17:57:58 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/30 21:23:21 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 size_t	count_words(char const *s, char c)
 {
 	size_t	count;
-	
+
 	count = 0;
 	while (*s == c)
 		s++;
 	while (ft_strchr(s, c))
 	{
 		count++;
-		s = ft_strchr(s, c);
+		if (ft_strchr(s, c))
+			s = ft_strchr(s, c);
 		while (*s == c)
 			s++;
 	}
@@ -34,39 +35,34 @@ char	**ft_split(char const *s, char c)
 {
 	size_t	word_counter;
 	size_t	pointer_buffer;
-	const char	**pointer_site;
+	char	*s_copy;
+	char	**pointer_site;
 
-	pointer_buffer = 0;
 	word_counter = count_words(s, c);
 	printf("%li words\n\n", word_counter);
-	pointer_site = ft_calloc(word_counter + 1, sizeof (char *));
-	if (pointer_site)
-	while (*s == c)
-		s++;
-	// while (pointer_buffer < word_counter)
-	while (ft_strchr(s, c))
+	pointer_buffer = 0;
+	s_copy = malloc((ft_strlen(s) + 1) * sizeof (char));
+	pointer_site = malloc((word_counter + 1) * sizeof (char *));
+	ft_strlcpy(s_copy, s, ft_strlen(s) + 1);
+	while (ft_strchr(s_copy, c))
 	{
-		pointer_site = &s;
-		printf("%s\n", *pointer_site);
+		while (*s_copy == c)
+			s_copy++;
+		pointer_site = &s_copy;
+		printf("%li\t%s\n", pointer_buffer, *pointer_site);
 		pointer_site++;
-		s = ft_strchr(s, c);
 		pointer_buffer++;
-		while (*s == c)
-			s++;
+		if (ft_strchr(s_copy, c))
+			s_copy = ft_strchr(s_copy, c);
 	}
-	return ((char **)s + c); // Absurd return just for the program to compile
+	return ((char **) pointer_site);
 }
 
 int	main(void)
 {
-	ft_split("    Ei, aqui   esta    eh uma frase    a ser     separada    aqui", ' ');
-}
+	char	**coiso;
 
-// void test_split()
-// {
-// 	char *s = "Esta e uma frase a ser separada"
-// 	char **each_word = ft_split(s, ' ');
-// 	while (i++ < 7)
-// 		printf("%s\n", each_word[i]);
-// 	return (0);
-// }
+	coiso = ft_split("  Essa aqui    eh uma frase   pra separar   ", ' ');
+	printf("return: %s\n", *coiso);
+	return (0);
+}
