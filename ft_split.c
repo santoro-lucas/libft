@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:36:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/06/30 16:52:38 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/06/30 17:57:58 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ size_t	count_words(char const *s, char c)
 	while (ft_strchr(s, c))
 	{
 		count++;
-		printf("%li\t%s\n", count, s);
 		s = ft_strchr(s, c);
 		while (*s == c)
 			s++;
@@ -34,27 +33,33 @@ size_t	count_words(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	size_t	word_counter;
-	// size_t	pointer_buffer;
-	char	**pointer_site;
+	size_t	pointer_buffer;
+	const char	**pointer_site;
 
+	pointer_buffer = 0;
 	word_counter = count_words(s, c);
-	printf("%li\n", word_counter);
+	printf("%li words\n\n", word_counter);
 	pointer_site = ft_calloc(word_counter + 1, sizeof (char *));
 	if (pointer_site)
-		printf("Vibe check\n");
 	while (*s == c)
 		s++;
-	// pointer_buffer = 0;
 	// while (pointer_buffer < word_counter)
-	// {
-	// 	//count++;
-	// 	s = ft_strchr(s, c);
-	// 	(pointer_site + pointer_buffer * sizeof(char *)) = &s;
-	// 	pointer_buffer++;
-	// 	while (*s == c)
-	// 		s++;
-	// }
+	while (ft_strchr(s, c))
+	{
+		pointer_site = &s;
+		printf("%s\n", *pointer_site);
+		pointer_site++;
+		s = ft_strchr(s, c);
+		pointer_buffer++;
+		while (*s == c)
+			s++;
+	}
 	return ((char **)s + c); // Absurd return just for the program to compile
+}
+
+int	main(void)
+{
+	ft_split("    Ei, aqui   esta    eh uma frase    a ser     separada    aqui", ' ');
 }
 
 // void test_split()
@@ -65,8 +70,3 @@ char	**ft_split(char const *s, char c)
 // 		printf("%s\n", each_word[i]);
 // 	return (0);
 // }
-
-int	main(void)
-{
-	ft_split("    Esta    e uma    frase    a ser     separada     ", ' ');
-}
