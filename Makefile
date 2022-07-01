@@ -55,4 +55,7 @@ fclean: clean
 	rm $(NAME)
 
 test: all clean
-	$(CC) $(CFLAGS) main.c $(NAME) && ./a.out
+	$(CC) $(CFLAGS) main.c libft.a && ./a.out
+
+alt_test: all clean
+	$(CC) $(CFLAGS) -g main.c ft_split.c ft_strtrim.c ft_strlen.c ft_calloc.c ft_substr.c ft_strchr.c ft_strlcpy.c ft_bzero.c ft_memset.c && ./a.out

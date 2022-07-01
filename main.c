@@ -4,21 +4,21 @@
 //#include <bsd/string.h>
 #include <sys/cdefs.h>
 
-static void	underline(char *str, char underchar)
-{
-	int len;
+// static void	underline(char *str, char underchar)
+// {
+// 	int len;
 
-	len = ft_strlen(str);
-	while (len-- > 0)
-		ft_putchar_fd(underchar, 1);
-}
-//
-static void	header(char *str)
-{
-	ft_putendl_fd(str, 1);
-	underline(str, '=');
-	ft_putchar_fd('\n', 1);
-}
+// 	len = ft_strlen(str);
+// 	while (len-- > 0)
+// 		ft_putchar_fd(underchar, 1);
+// }
+// //
+// static void	header(char *str)
+// {
+// 	ft_putendl_fd(str, 1);
+// 	underline(str, '=');
+// 	ft_putchar_fd('\n', 1);
+// }
 
 //static void test_memcmp(char um, char dois)
 //{
@@ -141,6 +141,8 @@ void	test_split(char *string, char delimiter)
 		ntimes++;
 	}
 	printf("\n");
+	free(*coiso);
+	free(coiso);
 }
 
 int	main(void)
@@ -231,12 +233,12 @@ int	main(void)
 //	test_substr("Running up that hill", 8, 0);
 //	header("Testing strjoin");
 //	header("Testing strtrim");
-	header("Testing split");
-	test_split("Essa aqui e uma frase pra separar", ' ');
+	// header("Testing split");
+	// test_split("Essa aqui e uma frase pra separar", ' ');
 	test_split("     Esta    impossivel    tankar o bostil  ", ' ');
 	test_split("bananada", ' ');
-	test_split(" bananada ", ' ');
-	test_split("        ", ' ');
+	// test_split(" bananada ", ' ');
+	// test_split("        ", ' ');
 //	header("Testing strmapi");
 //	header("Testing itoa");
 //	test_itoa(0);
