@@ -54,5 +54,5 @@ clean:
 fclean: clean
 	rm $(NAME)
 
-split:
-	$(CC) $(CFLAGS) ft_split.c $(NAME) && ./a.out
+test:
+	$(CC) $(CFLAGS) main.c $(NAME) && ./a.out

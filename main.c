@@ -127,6 +127,21 @@ static void	header(char *str)
 //		printf("%i\t%s\n", nbr, result_itoa);
 //	}
 //
+void	test_split(char *string, char delimiter)
+{
+	char	**coiso;
+	size_t	ntimes;
+
+	ntimes = 0;
+	coiso = ft_split(string, delimiter);
+	while (coiso[ntimes])
+	{
+		printf("%li. %s-\n", ntimes, coiso[ntimes]);
+		ntimes++;
+	}
+	printf("\n");
+}
+
 int	main(void)
 {
 //	header("Testing isalpha");
@@ -215,7 +230,12 @@ int	main(void)
 //	test_substr("Running up that hill", 8, 0);
 //	header("Testing strjoin");
 //	header("Testing strtrim");
-//	header("Testing split");
+	header("Testing split");
+	test_split("Essa aqui e uma frase pra separar", ' ');
+	test_split("     Esta    impossivel    tankar o bostil  ", ' ');
+	test_split("bananada", ' ');
+	test_split(" bananada ", ' ');
+	test_split("        ", ' ');
 //	header("Testing strmapi");
 //	header("Testing itoa");
 //	test_itoa(0);
