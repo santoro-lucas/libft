@@ -54,5 +54,5 @@ clean:
 fclean: clean
 	rm $(NAME)
 
-test:
+test: all clean
 	$(CC) $(CFLAGS) main.c $(NAME) && ./a.out
