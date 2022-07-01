@@ -134,9 +134,10 @@ void	test_split(char *string, char delimiter)
 
 	ntimes = 0;
 	coiso = ft_split(string, delimiter);
+	printf("%s:\n=======\n", string);
 	while (coiso[ntimes])
 	{
-		printf("%li. %s-\n", ntimes, coiso[ntimes]);
+		printf("%li. \\%s\\\n", ntimes, coiso[ntimes]);
 		ntimes++;
 	}
 	printf("\n");

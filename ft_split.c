@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:36:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/07/01 05:15:36 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/07/01 06:33:19 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,35 @@ static char	*trim_wrapper(const char *s, char c)
 	return (trimmed);
 }
 
-// This should replace trim, also removing all duplicate delimiters
-// Besides removing all delimiter in beggining and ending
-// static char *sanitizer(char const *s, char c)
+// static char *rm_dup_delim(const char *s, char c)
 // {
-// 	char			*groomed_s;
-// 	const size_t	size_0;
-// 	size_t			size_1;
-
-// 	size_0 = ft_strlen(s) + 1;
-// 	size_1 = size_0;
-// 	while (*s != '\0')
+// 	char	*new_s;
+// 	char	*s_trim;
+// 	size_t	size;
+// 	size_t	buffer;
+// 	size_t	offset;
+	
+// 	s_trim = trim_wrapper(s, c);
+// 	size = ft_strlen(s) + 1;
+// 	while (*(s_trim + buffer) != '\0')
 // 	{
-// 		if(*s != c && 
-// 			(size_1 = ft_strlen(s) || *(s - 1) == c || *(s + 1) == '\0'))
-// 			size_1--;
-// 		s++;
+// 		if(*(s_trim + buffer) == c && *(s_trim + buffer - 1) == c)
+// 			size--;
+// 		buffer++;
 // 	}
-// 	groomed_s = malloc(size_1);
+// 	buffer = 0;
+// 	new_s = malloc(size);
+// 	while (*(s_trim + buffer) != '\0')
+// 	{
+// 		if(*(s_trim + buffer) != c || (*(s_trim + buffer) == c && *((s_trim + buffer) - 1) != c))
+// 		{
+// 			*(new_s + offset) = *(s_trim + buffer);
+// 			offset++;
+// 		}
+// 		buffer++;
+// 	}
+// 	free(s_trim);
+// 	return(new_s);
 // }
 
 char	**ft_split(char const *s, char c)
@@ -66,6 +77,7 @@ char	**ft_split(char const *s, char c)
 
 	word_counter = count_words(s, c);
 	s_trim = trim_wrapper(s, c);
+	// s_trim = rm_dup_delim(s, c);
 	array = calloc(word_counter + 1, sizeof (char *));
 	pos = 0;
 	while (word_counter--)
