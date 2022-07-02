@@ -20,7 +20,11 @@
 // 	ft_putchar_fd('\n', 1);
 // }
 
-//static void test_memcmp(char um, char dois)
+void	test_memcpy(void *dest, void *src, size_t n)
+{
+		
+}
+//void test_memcmp(char um, char dois)
 //{
 //	int r_og;
 //	int r_ft;
@@ -156,6 +160,7 @@ int	main(void)
 //	header("Testing memset");
 //	header("Testing bzero");
 //	header("Testing memcpy");
+//	
 //	header("Testing memmove");
 //	header("Testing strlcpy");
 //	header("Testing strlcat");
@@ -271,4 +276,3 @@ int	main(void)
 //	test_putnbr_fd(+100000);
 //	return (0);
 }
-

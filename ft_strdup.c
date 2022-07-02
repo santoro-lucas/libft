@@ -19,6 +19,8 @@ char	*ft_strdup(char *s)
 
 	len = ft_strlen(s) + 1;
 	dup = malloc(len);
+	if (!dup)
+		return (NULL);
 	ft_strlcpy(dup, s, len);
 	return (dup);
 }

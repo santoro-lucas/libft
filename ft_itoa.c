@@ -26,6 +26,8 @@ char	*set_array(int n)
 		figures++;
 	}
 	array = malloc(figures + 1);
+	if (!array)
+		return (NULL);
 	ft_memset(array, '0', figures);
 	ft_bzero(array + figures, 1);
 	return (array);
@@ -37,6 +39,8 @@ char	*ft_itoa(int n)
 	size_t	len;
 
 	arr = set_array(n);
+	if (!arr)
+		return (NULL);
 	len = ft_strlen(arr);
 	if (n < 0)
 		*arr = '-';

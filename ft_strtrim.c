@@ -23,6 +23,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	while (ft_strchr(set, *(s1 + len - 1)) && len > 0)
 		len--;
 	s2 = malloc(len + 1);
+	if (!s2)
+		return (NULL);
 	ft_strlcpy(s2, s1, len + 1);
 	return (s2);
 }

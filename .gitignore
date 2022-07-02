@@ -64,3 +64,4 @@ venv/*
 *.swp
 tester_tripouille
 tester_tripouille/*
+teste.c

@@ -19,14 +19,12 @@ static size_t	count_words(char const *s, char c)
 	count = 0;
 	while (*s != '\0')
 	{
-		if(*s != c && (count == 0 || *(s - 1) == c))
+		if (*s != c && (count == 0 || *(s - 1) == c))
 			count++;
 		s++;
 	}
 	return (count);
 }
-
-
 
 size_t	wordlen(const char *str, char end)
 {
@@ -43,21 +41,23 @@ char	**ft_split(char const *s, char c)
 	size_t	word_counter;
 	size_t	pos;
 	size_t	j;
-	char	**array;
+	char	**word;
 
 	word_counter = count_words(s, c);
-	array = ft_calloc(word_counter + 1, sizeof (char *));
+	word = ft_calloc(word_counter + 1, sizeof (char *));
+	if (!word)
+		return(NULL);
 	pos = 0;
 	j = 0;
 	while (word_counter--)
 	{
-		while (*(s + j) == c)
+		while (*(s + j) == c && *(s + j) != '\0')
 			j++;
-		array[pos] = ft_substr(s, j, wordlen((s + j), c));
-		while (*(s + j) != c)
+		word[pos] = ft_substr(s, j, wordlen((s + j), c));
+		while (*(s + j) != c && *(s + j) != '\0')
 			j++;
 		pos++;
 	}
-	array[pos] = NULL;
-	return (array);
+	word[pos] = NULL;
+	return (word);
 }
