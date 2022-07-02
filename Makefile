@@ -40,6 +40,8 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME) 
 
+.c.o: $(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
 $(NAME): libft.h $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
@@ -52,10 +54,7 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	rm $(NAME)
+	$(RM) $(NAME)
 
 test: all clean
 	$(CC) $(CFLAGS) main.c libft.a && ./a.out
-
-alt_test: all clean
-	$(CC) $(CFLAGS) -g teste.c ft_split.c ft_strtrim.c ft_strlen.c ft_calloc.c ft_substr.c ft_strchr.c ft_strlcpy.c ft_bzero.c ft_memset.c && ./a.out
