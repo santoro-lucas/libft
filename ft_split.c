@@ -46,7 +46,7 @@ char	**ft_split(char const *s, char c)
 	word_counter = count_words(s, c);
 	word = ft_calloc(word_counter + 1, sizeof (char *));
 	if (!word)
-		return(NULL);
+		return (NULL);
 	pos = 0;
 	j = 0;
 	while (word_counter--)
