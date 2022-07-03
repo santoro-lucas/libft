@@ -12,30 +12,14 @@
 
 #include "libft.h"
 
-static int	ft_isspace(char c)
-{
-	char	jumpable[7];
-	size_t	i;
-
-	ft_memcpy(jumpable, " \t\n\v\r\f", 7);
-	i = 0;
-	while (i < 6)
-	{
-		if ((char) c == jumpable[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 int	ft_atoi(const char *nptr)
 {
-	int		num;
-	char	sign;
+	int	number;
+	int	sign;
 
-	num = 0;
+	number = 0;
 	sign = 1;
-	while (ft_isspace(*nptr) && *nptr != '\0')
+	while (ft_strchr(" \t\n\v\r\f", *nptr) && *nptr != '\0')
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{
@@ -47,10 +31,10 @@ int	ft_atoi(const char *nptr)
 		return (0);
 	while (ft_isdigit(*nptr))
 	{
-		num *= 10;
-		num += (*nptr - '0');
+		number *= 10;
+		number += (*nptr - '0');
 		nptr++;
 	}
-	num *= sign;
-	return (num);
+	number *= sign;
+	return (number);
 }

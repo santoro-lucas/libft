@@ -18,7 +18,6 @@ static void	putdigit(int d, int fd)
 	write(fd, &d, 1);
 }
 
-// Still needs to manage int min = -2147483648
 void	ft_putnbr_fd(int n, int fd)
 {
 	long int	n2;
@@ -29,7 +28,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		n2 = n2 * -1;
 	}
-	if (n2 / 10 < 1)
+	if (n2 < 10)
 		putdigit(n2 % 10, fd);
 	else
 	{

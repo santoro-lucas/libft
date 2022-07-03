@@ -55,6 +55,3 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-
-test: all clean
-	$(CC) $(CFLAGS) main.c libft.a && ./a.out

@@ -26,7 +26,7 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-size_t	wordlen(const char *str, char end)
+static size_t	wordlen(const char *str, char end)
 {
 	int	len;
 
@@ -36,28 +36,41 @@ size_t	wordlen(const char *str, char end)
 	return (len);
 }
 
+void	free_all(char **word_list)
+{
+	while (*word_list)
+	{
+		free(*word_list);
+		word_list++;
+	}
+	free(word_list);
+}
+
 char	**ft_split(char const *s, char c)
 {
+	char	**word_list;
 	size_t	word_counter;
+	size_t	index;
 	size_t	pos;
-	size_t	j;
-	char	**word;
 
+	if (s == NULL)
+		return (0);
 	word_counter = count_words(s, c);
-	word = ft_calloc(word_counter + 1, sizeof (char *));
-	if (!word)
+	word_list = ft_calloc(word_counter + 1, sizeof (char *));
+	if (!word_list)
 		return (NULL);
+	index = 0;
 	pos = 0;
-	j = 0;
 	while (word_counter--)
 	{
-		while (*(s + j) == c && *(s + j) != '\0')
-			j++;
-		word[pos] = ft_substr(s, j, wordlen((s + j), c));
-		while (*(s + j) != c && *(s + j) != '\0')
-			j++;
-		pos++;
+		while (*(s + pos) == c && *(s + pos) != '\0')
+			pos++;
+		word_list[index] = ft_substr(s, pos, wordlen((s + pos), c));
+		if (!word_list[index])
+			free_all(word_list);
+		while (*(s + pos) != c && *(s + pos) != '\0')
+			pos++;
+		index++;
 	}
-	word[pos] = NULL;
-	return (word);
+	return (word_list);
 }

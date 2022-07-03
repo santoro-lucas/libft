@@ -14,7 +14,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	iteri;
+	unsigned int	iteri;
 
 	iteri = 0;
 	while (*(s + iteri) != '\0')
