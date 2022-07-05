@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:36:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/07/01 17:58:36 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/07/05 00:46:20 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,51 +26,46 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-static size_t	wordlen(const char *str, char end)
-{
-	int	len;
-
-	len = 0;
-	while (*str != end && *str++ != '\0')
-		len++;
-	return (len);
-}
-
-void	free_all(char **word_list)
+static void	free_all(char **word_list)
 {
 	while (*word_list)
-	{
-		free(*word_list);
-		word_list++;
-	}
+		free(*word_list--);
 	free(word_list);
+}
+
+static void	fill(char **word_list, const char *s, \
+					size_t counter, char c)
+{
+	size_t	index;
+	size_t	start;
+	size_t	end;
+
+	index = 0;
+	start = 0;
+	while (counter--)
+	{
+		while (s[start] == c && s[start] != '\0')
+			start++;
+		end = ft_strchr((s + start), c) - (s + start);
+		word_list[index] = ft_substr(s, start, end);
+		if (!word_list[index])
+			free_all(word_list);
+		while (s[start] != c && s[start] != '\0')
+			start++;
+		index++;
+	}
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**word_list;
-	size_t	word_counter;
-	size_t	index;
-	size_t	pos;
+	size_t	counter;
 
-	if (s == NULL)
-		return (0);
-	word_counter = count_words(s, c);
-	word_list = ft_calloc(word_counter + 1, sizeof (char *));
-	if (!word_list)
+	if (!s)
 		return (NULL);
-	index = 0;
-	pos = 0;
-	while (word_counter--)
-	{
-		while (*(s + pos) == c && *(s + pos) != '\0')
-			pos++;
-		word_list[index] = ft_substr(s, pos, wordlen((s + pos), c));
-		if (!word_list[index])
-			free_all(word_list);
-		while (*(s + pos) != c && *(s + pos) != '\0')
-			pos++;
-		index++;
-	}
+	counter = count_words(s, c);
+	word_list = ft_calloc(counter + 1, sizeof (char *));
+	if (word_list)
+		fill(word_list, s, counter, c);
 	return (word_list);
 }
