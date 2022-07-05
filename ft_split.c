@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:36:46 by lusantor          #+#    #+#             */
-/*   Updated: 2022/07/05 00:46:20 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:10:37 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static size_t	count_words(char const *s, char c)
 static void	free_all(char **word_list)
 {
 	while (*word_list)
-		free(*word_list--);
+		free(*word_list++);
 	free(word_list);
 }
 
