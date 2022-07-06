@@ -28,9 +28,13 @@ static size_t	count_words(char const *s, char c)
 
 static void	free_all(char **word_list)
 {
-	while (*word_list)
-		free(*word_list++);
+	int	i;
+
+	i = 0;
+	while (*(word_list + i))
+		free(*word_list + i++);
 	free(word_list);
+	word_list = NULL;
 }
 
 static void	fill(char **word_list, const char *s, \
