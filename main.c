@@ -3,9 +3,9 @@
 
 int	main(void)
 {
-	t_list	first;
-	t_list	second;
-	t_list	third;
+	t_list	*first;
+	t_list	*second;
+	t_list	*third;
 	char	*cont_one;
 	char	*cont_two;
 	char 	*cont_three;
@@ -16,8 +16,8 @@ int	main(void)
 	first = ft_lstnew(cont_one);
 	second = ft_lstnew(cont_two);
 	third = ft_lstnew(cont_three);
-	printf("%s\n", first->content);
-	printf("%s\n", second->content);
-	printf("%s\n", third->content);
+	printf("%s\n", (char *) first->content);
+	printf("%s\n", (char *) second->content);
+	printf("%s\n", (char *) third->content);
 	return (0);
 }
