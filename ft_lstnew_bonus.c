@@ -6,7 +6,7 @@
 /*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 00:08:25 by lusantor          #+#    #+#             */
-/*   Updated: 2022/07/09 00:09:00 by lusantor         ###   ########.fr       */
+/*   Updated: 2022/07/09 00:30:53 by lusantor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new;
 
 	new = malloc(sizeof(t_list));
-	new->content = content;
-	new->next = NULL;
+	new -> content = content;
+	new -> next = NULL;
 	return (new);
 }

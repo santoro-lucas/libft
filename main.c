@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lusantor <lusantor@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/09 00:31:11 by lusantor          #+#    #+#             */
+/*   Updated: 2022/07/09 00:31:14 by lusantor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include "libft.h"
 
@@ -16,6 +28,7 @@ int	main(void)
 	first = ft_lstnew(cont_one);
 	second = ft_lstnew(cont_two);
 	third = ft_lstnew(cont_three);
+	ft_lstadd_front(&first, second);
 	printf("%s\n", (char *) first->content);
 	printf("%s\n", (char *) second->content);
 	printf("%s\n", (char *) third->content);
